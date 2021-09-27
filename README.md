@@ -668,3 +668,49 @@ vim ~/Downloads/apache-maven-3.8.2/conf/settings.xml
     </server>
 </settings>     
 ```
+4. Edit your Hello pom.xml and add <distributionManagement> Tag as shown below
+```
+<project>
+        <modelVersion>4.0.0</modelVersion>
+
+        <groupId>org.tektutor</groupId>
+        <artifactId>tektutor-hello-app</artifactId>
+        <version>1.0.0</version>
+
+        <properties>
+                <maven.compiler.source>1.10</maven.compiler.source>
+                <maven.compiler.target>1.10</maven.compiler.target>
+        </properties>
+
+        <dependencies>
+                <dependency>
+                        <groupId>junit</groupId>
+                        <artifactId>junit</artifactId>
+                        <version>4.12</version>
+                </dependency>
+        </dependencies>
+
+        <build>
+                <plugins>
+                        <plugin>
+                                <groupId>org.apache.maven.plugins</groupId>
+                                <artifactId>maven-site-plugin</artifactId>
+                                <version>3.7.1</version>
+                        </plugin>
+
+                        <plugin>
+                          <groupId>org.apache.maven.plugins</groupId>
+                          <artifactId>maven-project-info-reports-plugin</artifactId>
+                          <version>3.0.0</version>
+                        </plugin>
+                </plugins>
+        </build>
+
+        <distributionManagement>
+                <repository>
+                        <id>artifactory</id>
+                        <url>http://localhost:8082/ui/native/tektutor/</url>
+                </repository>
+        </distributionManagement>
+</project>
+```
