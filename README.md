@@ -646,6 +646,6 @@ When prompted to change your password, you may change the password to Admin@123 
 2. Select Local Repository
 3. Select Maven
 4. In the Repository key field type 'tektutor' without quotes.
-5. Save/Finish
+5. Click on Save & Finish button
 
 
