@@ -146,7 +146,7 @@ mvn help:describe -Dcmd=compile
 ```
 The expected output is
 <pre>
-[jegan@tektutor Hello]$ mvn help:describe -Dcmd=compile
+[jegan@tektutor Hello]$ <b>mvn help:describe -Dcmd=compile</b>
 [INFO] Scanning for projects...
 [INFO] 
 [INFO] ------------------< org.tektutor:tektutor-hello-app >-------------------
@@ -196,7 +196,7 @@ mvn help:describe -Dcmd=clean
 ```
 The expected output is
 <pre>
-[jegan@tektutor Hello]$ mvn help:describe -Dcmd=clean
+[jegan@tektutor Hello]$ <b>mvn help:describe -Dcmd=clean</b>
 [INFO] Scanning for projects...
 [INFO] 
 [INFO] ------------------< org.tektutor:tektutor-hello-app >-------------------
@@ -223,7 +223,7 @@ mvn help:describe -Dcmd=site
 ```
 The expected output is
 <pre>
-[jegan@tektutor Hello]$ mvn help:describe -Dcmd=site
+[jegan@tektutor Hello]$ <b>mvn help:describe -Dcmd=site</b>
 [INFO] Scanning for projects...
 [INFO] 
 [INFO] ------------------< org.tektutor:tektutor-hello-app >-------------------
