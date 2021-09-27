@@ -640,3 +640,12 @@ Username - admin
 Password - password
 </pre>
 When prompted to change your password, you may change the password to Admin@123 but otherwise all the other configurations you just skip and Finish.
+
+### Creating a Maven Local Repository in JFrog Artifactory
+1. Click on the Create Repository button
+2. Select Local Repository
+3. Select Maven
+4. In the Repository key field type 'tektutor' without quotes.
+5. Save/Finish
+
+
