@@ -639,3 +639,4 @@ The login credentials are shown below
 Username - admin
 Password - password
 </pre>
+When prompted to change your password, you may change the password to Admin@123 but otherwise all the other configurations you just skip and Finish.
