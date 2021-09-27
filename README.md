@@ -245,3 +245,51 @@ The expected output is
 [INFO] ------------------------------------------------------------------------
 [jegan@tektutor Hello]$ 
 </pre>
+
+### Finding the goals supported by maven compiler plugin
+```
+mvn help:describe -Dplugin=org.apache.maven.plugins:maven-compiler-plugin:3.1
+```
+The expected output is
+<pre>
+[jegan@tektutor Hello]$ <b>mvn help:describe -Dplugin=org.apache.maven.plugins:maven-compiler-plugin:3.1</b>
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< org.tektutor:tektutor-hello-app >-------------------
+[INFO] Building tektutor-hello-app 1.0.0
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-help-plugin:3.2.0:describe (default-cli) @ tektutor-hello-app ---
+[INFO] org.apache.maven.plugins:maven-compiler-plugin:3.1
+
+Name: Maven Compiler Plugin
+Description: The Compiler Plugin is used to compile the sources of your
+  project.
+Group Id: org.apache.maven.plugins
+Artifact Id: maven-compiler-plugin
+Version: 3.1
+Goal Prefix: compiler
+
+This plugin has 3 goals:
+
+compiler:compile
+  Description: Compiles application sources
+
+compiler:help
+  Description: Display help information on maven-compiler-plugin.
+    Call mvn compiler:help -Ddetail=true -Dgoal=<goal-name> to display
+    parameter details.
+
+compiler:testCompile
+  Description: Compiles application test sources.
+
+For more information, run 'mvn help:describe [...] -Ddetail'
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.176 s
+[INFO] Finished at: 2021-09-27T03:09:10-07:00
+[INFO] ------------------------------------------------------------------------
+</pre>
+
