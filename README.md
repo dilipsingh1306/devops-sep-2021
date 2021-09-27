@@ -648,4 +648,23 @@ When prompted to change your password, you may change the password to Admin@123 
 4. In the Repository key field type 'tektutor' without quotes.
 5. Click on Save & Finish button
 
-
+### Configuring Maven settings.xml file to deploy our application artifacts to JFrog Artifactory
+1. Find Maven home directory
+```
+mvn --version
+```
+2. Edit the settings.xml file
+```
+vim ~/Downloads/apache-maven-3.8.2/conf/settings.xml
+```
+3. Make sure you add the server credentials as shown below while retaining the other lines of configures as it was originally.
+```
+<settings>
+  <servers>
+    <server>
+      <id>artifactory</id>
+      <username>admin</username>
+      <password>Admin@123</password>
+    </server>
+</settings>     
+```
