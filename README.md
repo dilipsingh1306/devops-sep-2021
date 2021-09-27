@@ -620,3 +620,17 @@ The expected output is
 CONTAINER ID   IMAGE                                            COMMAND                  CREATED              STATUS          PORTS                                       NAMES
 3a2b60ca399d   docker.bintray.io/jfrog/artifactory-oss:latest   "/entrypoint-artifac…"   About a minute ago   Up 59 seconds   0.0.0.0:8081->8081/tcp, :::8081->8081/tcp   artifactory
 </pre>
+
+### Deleting the JFrog Artifactory container and recreating with 8081 and 8082 ports forwarded
+```
+docker rm -f artifactory
+```
+You may now create the artifactory as shown below
+```
+docker run --name artifactory -d -p 8081-8082:8081-8082 docker.bintray.io/jfrog/artifactory-oss:latest
+```
+
+### Accessing the Artifactory web page from your RPS Lab machine web browser(preferably Chrome)
+```
+http://localhost:8081
+```
