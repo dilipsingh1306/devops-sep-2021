@@ -709,7 +709,7 @@ vim ~/Downloads/apache-maven-3.8.2/conf/settings.xml
         <distributionManagement>
                 <repository>
                         <id>artifactory</id>
-                        <url>http://localhost:8082/ui/native/tektutor/</url>
+                        <url>http://172.17.0.2:8082/artifactory/tektutor/</url>
                 </repository>
         </distributionManagement>
 </project>
