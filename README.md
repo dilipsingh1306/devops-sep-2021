@@ -657,15 +657,18 @@ mvn --version
 ```
 vim ~/Downloads/apache-maven-3.8.2/conf/settings.xml
 ```
-3. Make sure you add the server credentials as shown below while retaining the other lines of configures as it was originally.
+3. Make sure you add the server credentials as shown below under the settings tag, while retaining the other lines of configures as it was originally.  The settings tag and servers will be there already, you just need to add the server tag and its contents.
 ```
 <settings>
   <servers>
+  
     <server>
       <id>artifactory</id>
       <username>admin</username>
       <password>Admin@123</password>
     </server>
+  
+  </servers>
 </settings>     
 ```
 4. Edit your Hello pom.xml and add <distributionManagement> Tag as shown below
@@ -714,3 +717,76 @@ vim ~/Downloads/apache-maven-3.8.2/conf/settings.xml
         </distributionManagement>
 </project>
 ```
+
+### Let us now deploy our application artifacts to JFrog Artifactory
+```
+cd ~/Training/devops-sep-2021
+git pull
+cd Day1/Hello
+mvn deploy
+```
+The expected output is
+<pre>
+[jegan@tektutor Hello]$ mvn deploy
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< org.tektutor:tektutor-hello-app >-------------------
+[INFO] Building tektutor-hello-app 1.0.0
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ tektutor-hello-app ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /home/jegan/Training/devops-sep-2021/Day1/Hello/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ tektutor-hello-app ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 1 source file to /home/jegan/Training/devops-sep-2021/Day1/Hello/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ tektutor-hello-app ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /home/jegan/Training/devops-sep-2021/Day1/Hello/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ tektutor-hello-app ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 1 source file to /home/jegan/Training/devops-sep-2021/Day1/Hello/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ tektutor-hello-app ---
+[INFO] Surefire report directory: /home/jegan/Training/devops-sep-2021/Day1/Hello/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.tektutor.HelloTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 sec
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ tektutor-hello-app ---
+[INFO] Building jar: /home/jegan/Training/devops-sep-2021/Day1/Hello/target/tektutor-hello-app-1.0.0.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ tektutor-hello-app ---
+[INFO] Installing /home/jegan/Training/devops-sep-2021/Day1/Hello/target/tektutor-hello-app-1.0.0.jar to /home/jegan/.m2/repository/org/tektutor/tektutor-hello-app/1.0.0/tektutor-hello-app-1.0.0.jar
+[INFO] Installing /home/jegan/Training/devops-sep-2021/Day1/Hello/pom.xml to /home/jegan/.m2/repository/org/tektutor/tektutor-hello-app/1.0.0/tektutor-hello-app-1.0.0.pom
+[INFO] 
+[INFO] --- maven-deploy-plugin:2.7:deploy (default-deploy) @ tektutor-hello-app ---
+Uploading to artifactory: http://172.17.0.2:8082/artifactory/tektutor/org/tektutor/tektutor-hello-app/1.0.0/tektutor-hello-app-1.0.0.jar
+Uploaded to artifactory: http://172.17.0.2:8082/artifactory/tektutor/org/tektutor/tektutor-hello-app/1.0.0/tektutor-hello-app-1.0.0.jar (2.3 kB at 11 kB/s)
+Uploading to artifactory: http://172.17.0.2:8082/artifactory/tektutor/org/tektutor/tektutor-hello-app/1.0.0/tektutor-hello-app-1.0.0.pom
+Uploaded to artifactory: http://172.17.0.2:8082/artifactory/tektutor/org/tektutor/tektutor-hello-app/1.0.0/tektutor-hello-app-1.0.0.pom (989 B at 16 kB/s)
+Downloading from artifactory: http://172.17.0.2:8082/artifactory/tektutor/org/tektutor/tektutor-hello-app/maven-metadata.xml
+Downloaded from artifactory: http://172.17.0.2:8082/artifactory/tektutor/org/tektutor/tektutor-hello-app/maven-metadata.xml (385 B at 5.1 kB/s)
+Uploading to artifactory: http://172.17.0.2:8082/artifactory/tektutor/org/tektutor/tektutor-hello-app/maven-metadata.xml
+Uploaded to artifactory: http://172.17.0.2:8082/artifactory/tektutor/org/tektutor/tektutor-hello-app/maven-metadata.xml (337 B at 8.4 kB/s)
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.430 s
+[INFO] Finished at: 2021-09-27T04:38:09-07:00
+[INFO] ------------------------------------------------------------------------
+[jegan@tektutor Hello]$ 
+</pre>
