@@ -657,7 +657,7 @@ mvn --version
 ```
 vim ~/Downloads/apache-maven-3.8.2/conf/settings.xml
 ```
-3. Make sure you add the server credentials as shown below while retaining the other lines of configures as it was originally.
+3. Make sure you add the server credentials as shown below under the settings tag, while retaining the other lines of configures as it was originally.  The settings tag and servers will be there already, you just need to add the server tag and its contents.
 ```
 <settings>
   <servers>
