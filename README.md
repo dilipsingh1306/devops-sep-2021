@@ -577,3 +577,8 @@ Effective POMs, after inheritance, interpolation, and profiles are applied:
 [INFO] Finished at: 2021-09-27T03:12:46-07:00
 [INFO] ------------------------------------------------------------------------
 ```
+
+### Creating a JFrog Artifactory container to deploy our application jar files
+```
+docker run --name artifactory -d -p 8081:8081 docker.bintray.io/jfrog/artifactory-oss:latest
+```
