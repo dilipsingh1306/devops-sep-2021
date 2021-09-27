@@ -301,9 +301,10 @@ cd Day1/Hello
 mvn help:effective-pom
 ```
 The expected output is
-```
+<pre>
 [jegan@tektutor Hello]$ <b>mvn help:effective-pom</b>
-
+</pre>
+```
 [INFO] Scanning for projects...
 [INFO] 
 [INFO] ------------------< org.tektutor:tektutor-hello-app >-------------------
