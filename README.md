@@ -578,7 +578,45 @@ Effective POMs, after inheritance, interpolation, and profiles are applied:
 [INFO] ------------------------------------------------------------------------
 ```
 
+### Installing Docker Community Edition in CentOS 8.x
+```
+sudo yum install -y yum-utils
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+sudo yum install -y docker-ce --allowerasing
+sudo systemctl enable docker && sudo sytemctl start docker
+```
+
 ### Creating a JFrog Artifactory container to deploy our application jar files
 ```
 docker run --name artifactory -d -p 8081:8081 docker.bintray.io/jfrog/artifactory-oss:latest
 ```
+The expected output is
+<pre>
+[jegan@tektutor Hello]$ docker run --name artifactory -d -p 8081:8081 docker.bintray.io/jfrog/artifactory-oss:latest
+Unable to find image 'docker.bintray.io/jfrog/artifactory-oss:latest' locally
+latest: Pulling from jfrog/artifactory-oss
+4f4fb700ef54: Pull complete 
+098a109c8679: Pull complete 
+4919a37879d7: Pull complete 
+ae7318a1d0bd: Pull complete 
+50ba4215936c: Pull complete 
+754a9c09e61e: Pull complete 
+d66e948dd9bb: Pull complete 
+b07aedeb4b47: Pull complete 
+930e4a0f633f: Pull complete 
+76ff8492c196: Pull complete 
+Digest: sha256:54b6c25d1a70399e17b574f9d5c4db4b1e2c45979ba96fbbaf222ca6e66f13a0
+Status: Downloaded newer image for docker.bintray.io/jfrog/artifactory-oss:latest
+3a2b60ca399daabbe17aa4382807c6302570b2170e8f0911653d1e0c7e343f57
+</pre>
+
+You may check if the artifactory container is running as expected
+```
+docker ps
+```
+The expected output is
+<pre>
+[jegan@tektutor Hello]$ docker ps
+CONTAINER ID   IMAGE                                            COMMAND                  CREATED              STATUS          PORTS                                       NAMES
+3a2b60ca399d   docker.bintray.io/jfrog/artifactory-oss:latest   "/entrypoint-artifac…"   About a minute ago   Up 59 seconds   0.0.0.0:8081->8081/tcp, :::8081->8081/tcp   artifactory
+</pre>
