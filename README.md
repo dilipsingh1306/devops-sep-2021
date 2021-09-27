@@ -36,7 +36,6 @@ export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-11.0.12.0.7-0.el8_4.x86_64
 export M2_HOME=/home/jegan/Downloads/apache-maven-3.8.2
 export PATH=$JAVA_HOME/bin:$M2_HOME/bin:$PATH
 ```
-
 In order to apply the changes, let's run
 ```
 source ~/.bashrc
@@ -126,3 +125,75 @@ cd Training
 git clone https://github.com/tektutor/devops-sep-2021.git
 cd devops-sep-2021
 ```
+### Compiling the Hello Maven project
+```
+cd ~/Training/devops-sep-2021
+git pull
+cd Day1/Hello
+mvn compile
+```
+
+### Checking the effective pom
+```
+cd ~/Training/devops-sep-2021
+cd Day1/Hello
+mvn help:effective-pom
+```
+
+### Listing the default life-cycle phases
+```
+mvn help:describe -Dcmd=compile
+```
+The expected output is
+<pre>
+[jegan@tektutor Hello]$ mvn help:describe -Dcmd=compile
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< org.tektutor:tektutor-hello-app >-------------------
+[INFO] Building tektutor-hello-app 1.0.0
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-help-plugin:3.2.0:describe (default-cli) @ tektutor-hello-app ---
+[INFO] 'compile' is a phase corresponding to this plugin:
+org.apache.maven.plugins:maven-compiler-plugin:3.1:compile
+
+It is a part of the lifecycle for the POM packaging 'jar'. This lifecycle includes the following phases:
+* validate: Not defined
+* initialize: Not defined
+* generate-sources: Not defined
+* process-sources: Not defined
+* generate-resources: Not defined
+* process-resources: org.apache.maven.plugins:maven-resources-plugin:2.6:resources
+* compile: org.apache.maven.plugins:maven-compiler-plugin:3.1:compile
+* process-classes: Not defined
+* generate-test-sources: Not defined
+* process-test-sources: Not defined
+* generate-test-resources: Not defined
+* process-test-resources: org.apache.maven.plugins:maven-resources-plugin:2.6:testResources
+* test-compile: org.apache.maven.plugins:maven-compiler-plugin:3.1:testCompile
+* process-test-classes: Not defined
+* test: org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test
+* prepare-package: Not defined
+* package: org.apache.maven.plugins:maven-jar-plugin:2.4:jar
+* pre-integration-test: Not defined
+* integration-test: Not defined
+* post-integration-test: Not defined
+* verify: Not defined
+* install: org.apache.maven.plugins:maven-install-plugin:2.4:install
+* deploy: org.apache.maven.plugins:maven-deploy-plugin:2.7:deploy
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.602 s
+[INFO] Finished at: 2021-09-27T01:56:17-07:00
+[INFO] ------------------------------------------------------------------------
+</pre>
+
+
+
+
+
+
+
+
