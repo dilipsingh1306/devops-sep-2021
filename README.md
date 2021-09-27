@@ -661,11 +661,14 @@ vim ~/Downloads/apache-maven-3.8.2/conf/settings.xml
 ```
 <settings>
   <servers>
+  
     <server>
       <id>artifactory</id>
       <username>admin</username>
       <password>Admin@123</password>
     </server>
+  
+  </servers>
 </settings>     
 ```
 4. Edit your Hello pom.xml and add <distributionManagement> Tag as shown below
