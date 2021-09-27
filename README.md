@@ -301,7 +301,7 @@ cd Day1/Hello
 mvn help:effective-pom
 ```
 The expected output is
-<pre>
+```
 [jegan@tektutor Hello]$ <b>mvn help:effective-pom</b>
 
 [INFO] Scanning for projects...
@@ -575,4 +575,4 @@ Effective POMs, after inheritance, interpolation, and profiles are applied:
 [INFO] Total time:  0.852 s
 [INFO] Finished at: 2021-09-27T03:12:46-07:00
 [INFO] ------------------------------------------------------------------------
-</pre>
+```
