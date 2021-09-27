@@ -634,3 +634,8 @@ docker run --name artifactory -d -p 8081-8082:8081-8082 docker.bintray.io/jfrog/
 ```
 http://localhost:8081
 ```
+The login credentials are shown below
+<pre>
+Username - admin
+Password - password
+</pre>
