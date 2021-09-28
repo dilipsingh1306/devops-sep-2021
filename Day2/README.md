@@ -397,6 +397,15 @@ Status: Downloaded newer image for hello-world:latest
 docker.io/library/hello-world:latest
 </pre>
 
+### Running Docker commands as non-root user(ie rps user)
+When you install docker, docker creates a user group called docker.  Any user is who is part of docker group will gain read/write access to docker commands.
+```
+sudo usermod -aG docker rps
+sudo su rps
+docker images
+```
+Once the rps user is added to 'docker' user group, rps user should be able to successfully issue any docker commands.
+
 ### Listing Docker images from your local registry
 ```
 docker images
