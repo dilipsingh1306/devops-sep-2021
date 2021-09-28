@@ -516,3 +516,20 @@ CONTAINER ID   IMAGE                                            COMMAND         
 8cae4661bd1b   ubuntu:20.04                                     "/bin/bash"              18 minutes ago   Up 18 minutes                                                                              c1
 3530a3c53efa   docker.bintray.io/jfrog/artifactory-oss:latest   "/entrypoint-artifac…"   24 hours ago     Up 24 hours                0.0.0.0:8081-8082->8081-8082/tcp, :::8081-8082->8081-8082/tcp   artifactory
 </pre>
+
+### Creating an ubuntu container in interactive mode
+```
+docker run -it --name c2 --hostname c2 ubuntu:20.04 /bin/bash
+```
+The expected output is
+<pre>
+[jegan@tektutor ~]$ docker run -it --name c2 --hostname c2 ubuntu:20.04 /bin/bash
+root@c2:/# ls
+bin   dev  home  lib32  libx32  mnt  proc  run   srv  tmp  var
+boot  etc  lib   lib64  media   opt  root  sbin  sys  usr
+root@c2:/# hostname
+c2
+root@c2:/# hostname -i
+172.17.0.4
+root@c2:/# 
+</pre>
