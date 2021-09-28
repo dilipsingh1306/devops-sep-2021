@@ -536,3 +536,33 @@ root@c2:/#
 
 In order to come out of the interactive container, you may type 'exit' but this will also exit the container.
 Optionally, you may try Ctrl + p, followed by Ctrl + q to come out of the container's shell without terminating the container.
+
+### Stopping a running container
+```
+docker stop c1
+```
+
+### Stopping multiple containers
+```
+docker stop c1 c2 c3
+```
+
+### Stopping multiple containers without using their names
+```
+docker stop $(docker ps -q)
+```
+
+### Starting a stopped container
+```
+docker start c1
+```
+
+### Starting mutiple stopped containers
+```
+docker start c1 c2 c3
+```
+
+### Starting multiple containers without their names
+```
+doccer start $(docker ps -aq)
+```
