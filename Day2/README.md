@@ -383,21 +383,28 @@ g++ bin/hello.o bin/main.o -o bin/main.exe</b>
 
 ## Docker Commands
 
-### Listing Docker images from your local registry
-```
-docker images
-```
-
 ### Downloading docker image from Docker Hub to Local
 ```
 docker pull hello-world:latest
 ```
 The expected output is
 <pre>
-[jegan@tektutor ~]$ docker pull hello-world:latest
+[jegan@tektutor ~]$ <b>docker pull hello-world:latest</b>
 latest: Pulling from library/hello-world
 2db29710123e: Pull complete 
 Digest: sha256:393b81f0ea5a98a7335d7ad44be96fe76ca8eb2eaa76950eb8c989ebf2b78ec0
 Status: Downloaded newer image for hello-world:latest
 docker.io/library/hello-world:latest
+</pre>
+
+### Listing Docker images from your local registry
+```
+docker images
+```
+The expected output is
+<pre>
+[jegan@tektutor ~]$ <b>docker images</b>
+REPOSITORY                                TAG       IMAGE ID       CREATED       SIZE
+hello-world                               latest    feb5d9fea6a5   4 days ago    13.3kB
+docker.bintray.io/jfrog/artifactory-oss   latest    f96008c316f4   2 weeks ago   980MB
 </pre>
