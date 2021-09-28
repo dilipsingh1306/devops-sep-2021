@@ -906,3 +906,29 @@ CONTAINER ID   IMAGE          COMMAND       CREATED          STATUS          POR
 c64620fc2d2e   ubuntu:20.04   "/bin/bash"   5 minutes ago    Up 5 minutes              ubuntu2
 97fbd090cf18   ubuntu:20.04   "/bin/bash"   5 minutes ago    Up 5 minutes              ubuntu1
 </pre>
+
+### Listing only ubuntu1 ubuntu2 and ubuntu3 containers
+```
+docker ps --filter "name=ubuntu*"
+```
+The expected output is
+<pre>
+[jegan@tektutor ~]$ docker ps --filter "name=ubuntu*"
+CONTAINER ID   IMAGE          COMMAND       CREATED         STATUS         PORTS     NAMES
+470304e01594   ubuntu:20.04   "/bin/bash"   7 minutes ago   Up 7 minutes             ubuntu3
+c64620fc2d2e   ubuntu:20.04   "/bin/bash"   7 minutes ago   Up 7 minutes             ubuntu2
+97fbd090cf18   ubuntu:20.04   "/bin/bash"   7 minutes ago   Up 7 minutes             ubuntu1
+</pre>
+
+### Listing only centos1 centos2 and centos3 containers
+```
+docker ps --filter "name=centos*"
+```
+The expected output is
+<pre>
+[jegan@tektutor ~]$ docker ps --filter "name=centos*"
+CONTAINER ID   IMAGE      COMMAND       CREATED         STATUS         PORTS     NAMES
+93aad5b4e536   centos:8   "/bin/bash"   2 minutes ago   Up 2 minutes             centos3
+009a107fa0f5   centos:8   "/bin/bash"   2 minutes ago   Up 2 minutes             centos2
+65595e7a0475   centos:8   "/bin/bash"   3 minutes ago   Up 3 minutes             centos1
+</pre>
