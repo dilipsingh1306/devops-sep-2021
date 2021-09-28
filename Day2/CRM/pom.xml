@@ -16,6 +16,7 @@
 		<module>businesslayer</module>
 		<module>backend</module>
 		<module>main</module>
+		<module>cpp-hello</module>
 	</modules>
 
 	<dependencyManagement>

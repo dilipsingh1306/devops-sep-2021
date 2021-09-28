@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.tektutor</groupId>
-	<artifactId>backend</artifactId>
+	<artifactId>businesslayer</artifactId>
 	<version>1.0.0</version>
 
 	<parent>
@@ -10,10 +10,12 @@
 		<artifactId>crm</artifactId>
 		<version>1.0.0</version>
 	</parent>
+
 	<dependencies>
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
+			<groupId>org.tektutor</groupId>
+			<artifactId>backend</artifactId>
+			<version>1.0.0</version>
 		</dependency>
 	</dependencies>
 </project>
