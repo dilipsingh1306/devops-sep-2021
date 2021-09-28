@@ -483,10 +483,8 @@ For more examples and ideas, visit:
  https://docs.docker.com/get-started/
 </pre>
 
-The container that we created above i.e hello container will exit as soon as it printed the above output.  So in order to list the containers in any state (running, created, exited, etc.,) You may try the below command
-
 ```
-docker ps -a
+docker ps
 ```
 The expected output is
 <pre>
@@ -494,6 +492,15 @@ The expected output is
 CONTAINER ID   IMAGE                                            COMMAND                  CREATED          STATUS          PORTS                                                           NAMES
 8cae4661bd1b   ubuntu:20.04                                     "/bin/bash"              18 minutes ago   Up 18 minutes                                                                   c1
 3530a3c53efa   docker.bintray.io/jfrog/artifactory-oss:latest   "/entrypoint-artifac…"   24 hours ago     Up 24 hours     0.0.0.0:8081-8082->8081-8082/tcp, :::8081-8082->8081-8082/tcp   artifactory
+</pre>
+
+The container that we created above i.e hello container will exit as soon as it printed the above output.  So in order to list the containers in any state (running, created, exited, etc.,) You may try the below command
+
+```
+docker ps -a
+```
+The expected output is
+<pre>
 [jegan@tektutor ~]$ docker ps -a
 CONTAINER ID   IMAGE                                            COMMAND                  CREATED          STATUS                     PORTS                                                           NAMES
 5af956dd81ec   hello-world:latest                               "/hello"                 3 minutes ago    Exited (0) 3 minutes ago                                                                   hello
