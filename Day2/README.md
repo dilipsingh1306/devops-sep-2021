@@ -932,3 +932,19 @@ CONTAINER ID   IMAGE      COMMAND       CREATED         STATUS         PORTS    
 009a107fa0f5   centos:8   "/bin/bash"   2 minutes ago   Up 2 minutes             centos2
 65595e7a0475   centos:8   "/bin/bash"   3 minutes ago   Up 3 minutes             centos1
 </pre>
+
+### Getting inside a container that is running in background
+```
+docker exec -it centos2 bash
+```
+
+The expected output is
+<pre>
+[jegan@tektutor ~]$ <b>docker exec -it centos2 bash</b>
+[root@centos2 /]# ls
+bin  dev  etc  home  lib  lib64  lost+found  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+[root@centos2 /]# hostname -i
+172.17.0.6
+[root@centos2 /]# hostname
+centos2
+</pre>
