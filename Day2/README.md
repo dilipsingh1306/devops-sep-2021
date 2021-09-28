@@ -349,3 +349,34 @@ g++ bin/hello.o bin/main.o -o bin/main.exe</b>
 [INFO] Finished at: 2021-09-28T00:12:20-07:00
 [INFO] ------------------------------------------------------------------------
 </pre>
+
+
+# Containers
+
+- Linux Technology
+- Linux Kernel
+  - Namespace - helps in isolating one container from the other container
+  - Control Groups(CGroups) - helps in applying hardware quota restrictions on containers
+- Some popular container runtimes
+  - LXC
+  - Docker
+  - CRI-O
+  - Podman ( Used by RedHat Openshift )
+
+- Docker
+  - Developed in Go programming language by Docker Inc
+  - follows Client/Server Architecture
+  - Client (docker - commandline tool)
+  - Server (dockerd - runs as Linux service[daemon])
+  - Docker Registries
+    - maintains a lot of Docker Images
+    - Database Images (Mongo, Couchbase, Oracle, MySQL, Redis, etc.,)
+    - Ubuntu, CentOS Docker images
+    - Web Sever Images ( Tomcat, Nginx, etc.,)
+  - supports 3 types of Registries
+    - Local Docker Registry
+    - Private Docker Registry
+    - Docker Hub (Website maintained by Docker Inc)
+  - comes in 2 flavours
+     - Community Edition (CE - Opensource)
+     - Enterprise Edition (EE - For Commercial use)
