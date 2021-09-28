@@ -895,4 +895,14 @@ You may now list the containers
 ```
 docker ps
 ```
-
+The expected output is
+<pre>
+[jegan@tektutor ~]$ docker ps
+CONTAINER ID   IMAGE          COMMAND       CREATED          STATUS          PORTS     NAMES
+93aad5b4e536   centos:8       "/bin/bash"   3 seconds ago    Up 2 seconds              centos3
+009a107fa0f5   centos:8       "/bin/bash"   12 seconds ago   Up 11 seconds             centos2
+65595e7a0475   centos:8       "/bin/bash"   25 seconds ago   Up 24 seconds             centos1
+470304e01594   ubuntu:20.04   "/bin/bash"   5 minutes ago    Up 5 minutes              ubuntu3
+c64620fc2d2e   ubuntu:20.04   "/bin/bash"   5 minutes ago    Up 5 minutes              ubuntu2
+97fbd090cf18   ubuntu:20.04   "/bin/bash"   5 minutes ago    Up 5 minutes              ubuntu1
+</pre>
