@@ -398,10 +398,17 @@ docker.io/library/hello-world:latest
 </pre>
 
 ### Running Docker commands as non-root user(ie rps user)
+
+##### Checking the user groups the rps user belongs to
+```
+id
+```
+
 When you install docker, docker creates a user group called docker.  Any user is who is part of docker group will gain read/write access to docker commands.
 ```
 sudo usermod -aG docker rps
 sudo su rps
+id
 docker images
 ```
 Once the rps user is added to 'docker' user group, rps user should be able to successfully issue any docker commands.
