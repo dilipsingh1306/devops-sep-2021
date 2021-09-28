@@ -948,3 +948,15 @@ bin  dev  etc  home  lib  lib64  lost+found  media  mnt  opt  proc  root  run  s
 [root@centos2 /]# hostname
 centos2
 </pre>
+
+### Deleting containers selectively using fiters
+```
+docker rm -f $(docker ps -q --filter "name=centos*")
+```
+The expected output is
+<pre>
+[jegan@tektutor Day2]$ docker rm -f $(docker ps -q --filter "name=centos*")
+93aad5b4e536
+009a107fa0f5
+65595e7a0475
+</pre>
