@@ -408,3 +408,17 @@ REPOSITORY                                TAG       IMAGE ID       CREATED      
 hello-world                               latest    feb5d9fea6a5   4 days ago    13.3kB
 docker.bintray.io/jfrog/artifactory-oss   latest    f96008c316f4   2 weeks ago   980MB
 </pre>
+
+### Creating an ubuntu container in background mode
+```
+docker run -dit --name c1 --hostname c1 ubuntu:20.04 /bin/bash
+```
+<pre>
+[jegan@tektutor ~]$ <b>docker run -dit --name c1 --hostname c1 ubuntu:20.04 /bin/bash</b>
+Unable to find image 'ubuntu:20.04' locally
+20.04: Pulling from library/ubuntu
+35807b77a593: Pull complete 
+Digest: sha256:9d6a8699fb5c9c39cf08a0871bd6219f0400981c570894cd8cbea30d3424a31f
+Status: Downloaded newer image for ubuntu:20.04
+8cae4661bd1b9a0d255cdf0b0d11c1cbc58b71f0f2b2f6da5cf4fbb483676e32
+<pre>
