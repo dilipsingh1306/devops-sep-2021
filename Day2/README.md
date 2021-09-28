@@ -380,3 +380,15 @@ g++ bin/hello.o bin/main.o -o bin/main.exe</b>
   - comes in 2 flavours
      - Community Edition (CE - Opensource)
      - Enterprise Edition (EE - For Commercial use)
+
+## Docker Commands
+
+### Listing Docker images from your local registry
+```
+docker images
+```
+
+### Downloading docker image from Docker Hub to Local
+```
+docker pull hello-world:latest
+```
