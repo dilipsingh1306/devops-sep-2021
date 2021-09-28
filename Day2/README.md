@@ -804,6 +804,8 @@ The expected output is
 ```
 docker inspect c1 | grep IPA
 ```
+
+The exepcted output is
 <pre>
 [jegan@tektutor ~]$ <b>docker inspect c1 | grep IPA</b>
             "SecondaryIPAddresses": null,
@@ -811,4 +813,14 @@ docker inspect c1 | grep IPA
                     "IPAMConfig": null,
                     "IPAddress": "172.17.0.2",
 
+</pre>
+
+### Docker's native style to extract IP Address without grep
+```
+docker inspect -f {{.NetworkSettings.IPAddress}} c1
+```
+The exepcted output is
+<pre>
+[jegan@tektutor ~]$ <b>docker inspect -f {{.NetworkSettings.IPAddress}} c1</b>
+172.17.0.2
 </pre>
