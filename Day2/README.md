@@ -440,6 +440,15 @@ Status: Downloaded newer image for ubuntu:20.04
 8cae4661bd1b9a0d255cdf0b0d11c1cbc58b71f0f2b2f6da5cf4fbb483676e32
 </pre>
 
+In the above command
+<pre>
+c1 - is the name of the container
+c1 - is the hostname of the container
+ubuntu:20.04 - is the name of the docker image
+/bin/bash - is the shell(application) that is launched inside the container
+</pre>
+
+
 ### Listing all the currently running containers
 ```
 docker ps
