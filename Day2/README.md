@@ -573,6 +573,12 @@ docker stop c1
 docker rm c1
 ```
 
+### Deleting multiple running container graciously
+```
+docker stop c1 c2 c3
+docker rm c1 c2 c3
+```
+
 ### Deleting a running container forcibly
 ```
 docker rm -f c1
