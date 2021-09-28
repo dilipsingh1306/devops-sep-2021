@@ -246,6 +246,17 @@ g++ bin/hello.o bin/main.o -o bin/main.exe
 [INFO] Finished at: 2021-09-28T00:08:42-07:00
 [INFO] ------------------------------------------------------------------------
 </pre>
+
+### Installing g++ compiler and make tools
+```
+cd ~/Training/devops-sep-2021
+git pull
+cd Day2/cpp-hello
+g++
+```
+When it prompts whether you want to install g++, type Yes and proceed.
+
+
 ### Running the cpp-hello application
 ```
 cd ~/Training/devops-sep-2021
