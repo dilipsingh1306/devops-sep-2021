@@ -392,3 +392,12 @@ docker images
 ```
 docker pull hello-world:latest
 ```
+The expected output is
+<pre>
+[jegan@tektutor ~]$ docker pull hello-world:latest
+latest: Pulling from library/hello-world
+2db29710123e: Pull complete 
+Digest: sha256:393b81f0ea5a98a7335d7ad44be96fe76ca8eb2eaa76950eb8c989ebf2b78ec0
+Status: Downloaded newer image for hello-world:latest
+docker.io/library/hello-world:latest
+</pre>
