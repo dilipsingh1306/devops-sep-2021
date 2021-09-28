@@ -849,6 +849,40 @@ c64620fc2d2e   ubuntu:20.04   "/bin/bash"   18 seconds ago   Up 17 seconds      
 97fbd090cf18   ubuntu:20.04   "/bin/bash"   23 seconds ago   Up 22 seconds             c1
 </pre>
 
+### Renaming the ubuntu containers
+```
+docker rename c1 ubuntu1
+docker rename c2 ubuntu2
+docker rename c3 ubuntu3
+```
+Listing the running containers
+```
+docker ps
+```
+The expected output is
+<pre>
+<b>Before renaming ...</b>
+[jegan@tektutor ~]$ <b>docker ps</b>
+CONTAINER ID   IMAGE          COMMAND       CREATED          STATUS          PORTS     NAMES
+470304e01594   ubuntu:20.04   "/bin/bash"   6 seconds ago    Up 5 seconds              c3
+c64620fc2d2e   ubuntu:20.04   "/bin/bash"   18 seconds ago   Up 17 seconds             c2
+97fbd090cf18   ubuntu:20.04   "/bin/bash"   23 seconds ago   Up 22 seconds             c1
+
+<b>Rename commands</b>
+[jegan@tektutor ~]$ docker rename c1 ubuntu1
+[jegan@tektutor ~]$ docker rename c2 ubuntu2
+[jegan@tektutor ~]$ docker rename c3 ubuntu3
+
+<b>After renaming</b>
+[jegan@tektutor ~]$ docker ps
+CONTAINER ID   IMAGE          COMMAND       CREATED         STATUS         PORTS     NAMES
+470304e01594   ubuntu:20.04   "/bin/bash"   2 minutes ago   Up 2 minutes             ubuntu3
+c64620fc2d2e   ubuntu:20.04   "/bin/bash"   2 minutes ago   Up 2 minutes             ubuntu2
+97fbd090cf18   ubuntu:20.04   "/bin/bash"   2 minutes ago   Up 2 minutes             ubuntu1
+</pre>
+
+
+
 ### Creating 3 centos containers
 ```
 docker run -dit --name centos1 --hostname centos1 centos:8 /bin/bash
