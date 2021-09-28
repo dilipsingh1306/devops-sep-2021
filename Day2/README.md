@@ -254,7 +254,8 @@ git pull
 cd Day2/cpp-hello
 g++
 ```
-When it prompts whether you want to install g++, type Yes and proceed.
+When it prompts whether you want to install g++, type Yes and proceed.  
+The root(admin) password is rps@12345
 
 
 ### Running the cpp-hello application
