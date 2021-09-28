@@ -483,3 +483,8 @@ For more examples and ideas, visit:
  https://docs.docker.com/get-started/
 </pre>
 
+The container that we created above i.e hello container will exit as soon as it printed the above output.  So in order to list the containers in any state (running, created, exited, etc.,) You may try the below command
+
+```
+docker ps -a
+```
