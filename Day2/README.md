@@ -799,3 +799,16 @@ The expected output is
     }
 ]
 </pre>
+
+### Finding the IP Address of a running container
+```
+docker inspect c1 | grep IPA
+```
+<pre>
+[jegan@tektutor ~]$ <b>docker inspect c1 | grep IPA</b>
+            "SecondaryIPAddresses": null,
+            "IPAddress": "172.17.0.2",
+                    "IPAMConfig": null,
+                    "IPAddress": "172.17.0.2",
+
+</pre>
