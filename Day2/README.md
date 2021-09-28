@@ -533,3 +533,6 @@ root@c2:/# hostname -i
 172.17.0.4
 root@c2:/# 
 </pre>
+
+In order to come out of the interactive container, you may type 'exit' but this will also exit the container.
+Optionally, you may try Ctrl + p, followed by Ctrl + q to come out of the container's shell without terminating the container.
