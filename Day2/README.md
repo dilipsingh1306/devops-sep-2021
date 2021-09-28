@@ -973,3 +973,99 @@ Untagged: hello-world@sha256:393b81f0ea5a98a7335d7ad44be96fe76ca8eb2eaa76950eb8c
 Deleted: sha256:feb5d9fea6a5e9606aa995e879d862b825965ba48de054caab5ef356dc6b3412
 Deleted: sha256:e07ee1baac5fae6a26f30cabfe54a36d3402f96afda318fe0a96cec4ca393359
 </pre>
+
+### Finding more details about an image
+```
+docker image inspect ubuntu:20.04
+```
+The expected output is
+<pre>
+[jegan@tektutor Day2]$ <b>docker image inspect ubuntu:20.04</b>
+[
+    {
+        "Id": "sha256:fb52e22af1b01869e23e75089c368a1130fa538946d0411d47f964f8b1076180",
+        "RepoTags": [
+            "ubuntu:20.04"
+        ],
+        "RepoDigests": [
+            "ubuntu@sha256:9d6a8699fb5c9c39cf08a0871bd6219f0400981c570894cd8cbea30d3424a31f"
+        ],
+        "Parent": "",
+        "Comment": "",
+        "Created": "2021-08-31T01:20:56.191693866Z",
+        "Container": "18d45584c4556d1d5a49733809341f0b2897434405d1297c27a371d419e1e9e9",
+        "ContainerConfig": {
+            "Hostname": "18d45584c455",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "/bin/sh",
+                "-c",
+                "#(nop) ",
+                "CMD [\"bash\"]"
+            ],
+            "Image": "sha256:97952717dbcb6750d0cef7e77a6188d9d4a7864122fd45d2434b5267b8e54e5d",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {}
+        },
+        "DockerVersion": "20.10.7",
+        "Author": "",
+        "Config": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "bash"
+            ],
+            "Image": "sha256:97952717dbcb6750d0cef7e77a6188d9d4a7864122fd45d2434b5267b8e54e5d",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": null
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 72776725,
+        "VirtualSize": 72776725,
+        "GraphDriver": {
+            "Data": {
+                "MergedDir": "/var/lib/docker/overlay2/b620ba0e099349a3791d493d7e79d998fc6b322a2d7517608f6baff48ec41d10/merged",
+                "UpperDir": "/var/lib/docker/overlay2/b620ba0e099349a3791d493d7e79d998fc6b322a2d7517608f6baff48ec41d10/diff",
+                "WorkDir": "/var/lib/docker/overlay2/b620ba0e099349a3791d493d7e79d998fc6b322a2d7517608f6baff48ec41d10/work"
+            },
+            "Name": "overlay2"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:4942a1abcbfa1c325b1d7ed93d3cf6020f555be706672308a4a4a6b6d631d2e7"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "0001-01-01T00:00:00Z"
+        }
+    }
+]
+</pre>
