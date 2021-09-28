@@ -1,3 +1,10 @@
+### Installing g++ compiler and make tools
+```
+sudo yum install -y gcc-c++ make
+```
+When it prompts for password, type the root(admin) password i.e rps@12345
+
+
 ### Build and run the CRM application
 ```
 cd ~/Training/devops-sep-2021
@@ -246,12 +253,6 @@ g++ bin/hello.o bin/main.o -o bin/main.exe
 [INFO] Finished at: 2021-09-28T00:08:42-07:00
 [INFO] ------------------------------------------------------------------------
 </pre>
-
-### Installing g++ compiler and make tools
-```
-sudo yum install -y g++ make
-```
-When it prompts for password, type the root(admin) password i.e rps@12345
 
 
 ### Running the cpp-hello application
