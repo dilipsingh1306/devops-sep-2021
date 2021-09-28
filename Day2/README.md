@@ -960,3 +960,16 @@ The expected output is
 009a107fa0f5
 65595e7a0475
 </pre>
+
+### Deleting an images
+```
+docker rmi hello-world:latest
+```
+The expected output is
+<pre>
+jegan@tektutor Day2]$ docker rmi hello-world:latest 
+Untagged: hello-world:latest
+Untagged: hello-world@sha256:393b81f0ea5a98a7335d7ad44be96fe76ca8eb2eaa76950eb8c989ebf2b78ec0
+Deleted: sha256:feb5d9fea6a5e9606aa995e879d862b825965ba48de054caab5ef356dc6b3412
+Deleted: sha256:e07ee1baac5fae6a26f30cabfe54a36d3402f96afda318fe0a96cec4ca393359
+</pre>
