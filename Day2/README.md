@@ -961,7 +961,7 @@ The expected output is
 65595e7a0475
 </pre>
 
-### Deleting an images
+### Deleting an image
 ```
 docker rmi hello-world:latest
 ```
