@@ -824,3 +824,41 @@ The exepcted output is
 [jegan@tektutor ~]$ <b>docker inspect -f {{.NetworkSettings.IPAddress}} c1</b>
 172.17.0.2
 </pre>
+
+### Remove all exiting containers
+```
+docker rm -f $(docker ps -aq)
+```
+
+### Creating 3 ubuntu containers
+```
+docker run -dit --name c1 --hostname c1 ubuntu:20.04 /bin/bash
+docker run -dit --name c2 --hostname c2 ubuntu:20.04 /bin/bash
+docker run -dit --name c3 --hostname c3 ubuntu:20.04 /bin/bash
+```
+Let us list the running containers
+```
+docker ps
+```
+The expected output is
+<pre>
+[jegan@tektutor ~]$ docker ps
+CONTAINER ID   IMAGE          COMMAND       CREATED          STATUS          PORTS     NAMES
+470304e01594   ubuntu:20.04   "/bin/bash"   6 seconds ago    Up 5 seconds              c3
+c64620fc2d2e   ubuntu:20.04   "/bin/bash"   18 seconds ago   Up 17 seconds             c2
+97fbd090cf18   ubuntu:20.04   "/bin/bash"   23 seconds ago   Up 22 seconds             c1
+</pre>
+
+### Creating 3 centos containers
+```
+docker run -dit --name centos1 --hostname centos1 centos:8 /bin/bash
+docker run -dit --name centos2 --hostname centos2 centos:8 /bin/bash
+docker run -dit --name centos3 --hostname centos3 centos:8 /bin/bash
+```
+As we don't have centos:8 image in the Local Docker Registry, Docker Application Engine(Server) will download it from Docker Hub(Remote Registry).
+
+You may now list the containers
+```
+docker ps
+```
+
