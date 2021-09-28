@@ -249,13 +249,9 @@ g++ bin/hello.o bin/main.o -o bin/main.exe
 
 ### Installing g++ compiler and make tools
 ```
-cd ~/Training/devops-sep-2021
-git pull
-cd Day2/cpp-hello
-g++
+sudo yum install -y g++ make
 ```
-When it prompts whether you want to install g++, type Yes and proceed.  
-The root(admin) password is rps@12345
+When it prompts for password, type the root(admin) password i.e rps@12345
 
 
 ### Running the cpp-hello application
