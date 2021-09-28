@@ -438,3 +438,15 @@ Digest: sha256:9d6a8699fb5c9c39cf08a0871bd6219f0400981c570894cd8cbea30d3424a31f
 Status: Downloaded newer image for ubuntu:20.04
 8cae4661bd1b9a0d255cdf0b0d11c1cbc58b71f0f2b2f6da5cf4fbb483676e32
 <pre>
+
+### Listing all the currently running containers
+```
+docker ps
+```
+The expected output is
+<pre>
+[jegan@tektutor ~]$ docker ps
+CONTAINER ID   IMAGE                                            COMMAND                  CREATED         STATUS         PORTS                                                           NAMES
+8cae4661bd1b   ubuntu:20.04                                     "/bin/bash"              6 seconds ago   Up 5 seconds                                                                   c1
+3530a3c53efa   docker.bintray.io/jfrog/artifactory-oss:latest   "/entrypoint-artifac…"   23 hours ago    Up 23 hours    0.0.0.0:8081-8082->8081-8082/tcp, :::8081-8082->8081-8082/tcp   artifactory
+</pre>
