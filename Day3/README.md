@@ -611,13 +611,14 @@ ansible -i hosts all -m ping
 ```
 In the above ansible ad-hoc command
 ```
-ansible - utility that is used to run any ansible ad-hoc command
--i  - indicates inventory
-hosts - is the inventory file name
--m  - indicates ansible module
-ping - is the ansible module ( python script that comes out of the box with Ansible)
+|-------|---------------------------------------------------------------------------------|
+|option | description                                                                     |
+|ansible| utility that is used to run any ansible ad-hoc command                          |
+|i      |indicates inventory                                                              |
+|hosts  |is the inventory file name                                                       |
+|m      |indicates ansible module                                                         |
+|ping   |is the ansible module ( python script that comes out of the box with Ansible)    |
 ```
-
 
 The expected output is
 <pre>
