@@ -910,8 +910,8 @@ ubuntu2                    : ok=9    changed=3    unreachable=0    failed=0    s
 	</head>
 
 	<body>
-		<h1>Provisioned by Docker</h1>
-		<h1>Configured by Ansible</h1>
+		Provisioned by Docker
+		Configured by Ansible
 	</body>
 <html>
 ```
