@@ -638,3 +638,11 @@ ubuntu1 | SUCCESS => {
     "ping": "pong"
 }
 </pre>
+
+### Other commonly used ansible ad-hoc commands
+```
+ansible -i hosts all -m shell -a "hostname"
+ansible -i hosts all -m shell -a "hostname -i"
+ansible -i hosts ubuntu1 -m ping
+ansible -i hosts ubuntu2 -m setup
+```
