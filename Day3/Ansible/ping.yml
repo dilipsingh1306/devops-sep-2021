@@ -3,3 +3,5 @@
   tasks:
     - name: Ping the node
       ping:
+
+    - shell: hostname

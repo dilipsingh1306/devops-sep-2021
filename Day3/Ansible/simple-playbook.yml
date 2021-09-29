@@ -1,0 +1,15 @@
+- name: First Play
+  hosts: dev
+  tasks:
+  - name: Second task
+    debug: msg="Second task in the First Play"
+
+  - debug: msg="Third task in the First Play"
+
+- name: Second Play
+  hosts: qa
+  tasks:
+  - name: Second task
+    debug: msg="Second task in the Second Play"
+
+  - debug: msg="Third task in the Second Play"

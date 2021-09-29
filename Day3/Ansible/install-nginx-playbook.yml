@@ -1,0 +1,31 @@
+- name: This playbook will install,configure and deploys custom web page into ansible nodes
+  hosts: dev 
+  tasks:
+    - name: Install nginx web server in Ubuntu nodes
+      apt: name=nginx state=latest update_cache=yes
+
+    - name: Install curl in Ubuntu nodes
+      apt: name=curl state=latest 
+
+    - name: Check if the web page is accessible using curl
+      shell: curl localhost
+      register: output
+      ignore_errors: yes
+
+    - debug: var=output
+
+    - name: Start nginx web server when curl fails
+      when: output.rc != 0
+      shell: nginx
+
+    - name: Configure document root folder to our custom folder
+      copy: src=default dest=/etc/nginx/sites-available/default
+
+    - name: Create the custom document root folder
+      file: path=/var/html state=directory mode=0777
+
+    - name: Reload the nginx configuration to apply changes
+      shell: nginx -s reload
+
+    - name: Deploy custom web page into nginx web server
+      copy: src=index.html dest=/var/html/index.html
