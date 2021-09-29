@@ -122,7 +122,65 @@ SHOW DATABASES;
 USE tektutor;
 SHOW TABLES;
 SELECT * FROM training;
+exit
+exit
 ```
 Type password as 'root'
+The expected output is
+<pre>
+[jegan@tektutor Day3]$ docker run -d --name db2 --hostname db2 -v /tmp:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root mysql:8
+77b942116928ac3ada7c3035b95dd1553b932c8c2549b060c5bddadcac953bc0
+[jegan@tektutor Day3]$ docker exec -it db2 sh
+# mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.26 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| tektutor           |
++--------------------+
+5 rows in set (0.01 sec)
+
+mysql> USE tektutor;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> SHOW TABLES;
++--------------------+
+| Tables_in_tektutor |
++--------------------+
+| training           |
++--------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT * FROM training;
++------+--------+----------+
+| id   | name   | duration |
++------+--------+----------+
+|    1 | DevOpS | 3 days   |
++------+--------+----------+
+1 row in set (0.00 sec)
+
+mysql> exit
+Bye
+# exit
+</pre>
 
 As you noticed, the data is intact(safe). We are able to access the data via another container i.e db2.
