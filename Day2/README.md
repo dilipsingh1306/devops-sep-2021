@@ -1069,3 +1069,21 @@ The expected output is
     }
 ]
 </pre>
+
+### Maven Profiles
+
+##### Invoking our custom maven test profile
+```
+cd ~/Training/devops-sep-2021
+git pull
+cd Day2/CRM
+mvn test -P test
+```
+
+##### Invoking our custom maven package profile
+```
+cd ~/Training/devops-sep-2021
+git pull
+cd Day2/CRM
+mvn test -P package
+```
