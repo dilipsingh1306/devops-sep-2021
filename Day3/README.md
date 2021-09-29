@@ -18,7 +18,7 @@ docker run -d --name db1 --hostname db1 -v /tmp:/var/lib/mysql -e MYSQL_ROOT_PAS
 ```
 The expected output is
 <pre>
-docker run -d --name db1 --hostname db1 -e MYSQL_ROOT_PASSWORD=root -v tmp:/var/lib/mysql mysql:8
+[jegan@tektutor Day3]$ docker run -d --name db1 --hostname db1 -e MYSQL_ROOT_PASSWORD=root -v tmp:/var/lib/mysql mysql:8
 0dd8bdf0d935940659d3efef7321c0855928c615044a8fd68effba8d653232fa
 </pre>
 
