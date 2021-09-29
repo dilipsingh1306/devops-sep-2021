@@ -31,7 +31,7 @@ mysql -u root -p
 When prompted for mysql server password, type 'root' without quotes.
 The expected output is
 <pre>
-[jegan@tektutor Day3]$ docker exec -it db1 sh
+[jegan@tektutor Day3]$ <b>docker exec -it db1 sh</b>
 # mysql -u root -p
 Enter password: 
 Welcome to the MySQL monitor.  Commands end with ; or \g.
@@ -62,7 +62,7 @@ exit
 ```
 The expected output is
 <pre>
-[jegan@tektutor Day3]$ docker exec -it db1 sh
+[jegan@tektutor Day3]$ <b>docker exec -it db1 sh</b>
 # mysql -u root -p
 Enter password: 
 Welcome to the MySQL monitor.  Commands end with ; or \g.
@@ -109,7 +109,7 @@ docker run -d --name db2 --hostname db2 -v /home/rps/mysql:/var/lib/mysql -e MYS
 ```
 The expected output is
 <pre>
-[jegan@tektutor Day3]$ docker rm -f db1
+[jegan@tektutor Day3]$ <b>docker rm -f db1</b>
 db1
 [jegan@tektutor Day3]$ docker run -d --name db2 --hostname db2 -v /home/rps/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root mysql:8
 77b942116928ac3ada7c3035b95dd1553b932c8c2549b060c5bddadcac953bc0
@@ -130,9 +130,9 @@ Type password as 'root'.
 
 The expected output is
 <pre>
-[jegan@tektutor Day3]$ docker run -d --name db2 --hostname db2 -v /home/rps/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root mysql:8
+[jegan@tektutor Day3]$ <b>docker run -d --name db2 --hostname db2 -v /home/rps/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root mysql:8</b>
 77b942116928ac3ada7c3035b95dd1553b932c8c2549b060c5bddadcac953bc0
-[jegan@tektutor Day3]$ docker exec -it db2 sh
+[jegan@tektutor Day3]$ <b>docker exec -it db2 sh</b>
 # mysql -u root -p
 Enter password: 
 Welcome to the MySQL monitor.  Commands end with ; or \g.
@@ -147,7 +147,7 @@ owners.
 
 Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
-mysql> SHOW DATABASES;
+mysql> <b>SHOW DATABASES;</b>
 +--------------------+
 | Database           |
 +--------------------+
@@ -159,12 +159,12 @@ mysql> SHOW DATABASES;
 +--------------------+
 5 rows in set (0.01 sec)
 
-mysql> USE tektutor;
+mysql> <b>USE tektutor;</b>
 Reading table information for completion of table and column names
 You can turn off this feature to get a quicker startup with -A
 
 Database changed
-mysql> SHOW TABLES;
+mysql> <b>SHOW TABLES;</b>
 +--------------------+
 | Tables_in_tektutor |
 +--------------------+
@@ -172,7 +172,7 @@ mysql> SHOW TABLES;
 +--------------------+
 1 row in set (0.00 sec)
 
-mysql> SELECT * FROM training;
+mysql> <b>SELECT * FROM training;</b>
 +------+--------+----------+
 | id   | name   | duration |
 +------+--------+----------+
