@@ -899,10 +899,10 @@ ubuntu2                    : ok=9    changed=3    unreachable=0    failed=0    s
 	</head>
 
 	<body>
-		<h1>Provisioned by Docker</h1>
-		<h1>Configured by Ansible</h1>
+		Provisioned by Docker
+		Configured by Ansible
 	</body>
-<html>
+</html>
 [jegan@tektutor Ansible]$ curl localhost:8002
 <html>
 	<head>
@@ -913,7 +913,7 @@ ubuntu2                    : ok=9    changed=3    unreachable=0    failed=0    s
 		Provisioned by Docker
 		Configured by Ansible
 	</body>
-<html>
+</html>
 ```
 
 ### Understanding Idempotent behaviour of Ansible
