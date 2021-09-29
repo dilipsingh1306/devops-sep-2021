@@ -595,7 +595,7 @@ The expected output is
 [jegan@tektutor]$ <b>ssh -p 2004 root@localhost</b>
 The authenticity of host '[localhost]:2004 ([::1]:2004)' can't be established.
 ECDSA key fingerprint is SHA256:bipIHYUJaG+NiaJ1WHyFNOG7C3hbyJv+BuRDMBlgeVU.
-Are you sure you want to continue connecting (yes/no/[fingerprint])? <b>yes<b>
+Are you sure you want to continue connecting (yes/no/[fingerprint])? <b>yes</b>
 Warning: Permanently added '[localhost]:2004' (ECDSA) to the list of known hosts.
 [root@centos2 ~]# <b>exit</b>
 logout
@@ -609,7 +609,7 @@ git pull
 cd Day3/Ansible
 ansible -i hosts all -m ping
 ```
-In the above ansible ad-hoc command
+Details of above ansible ad-hoc command are given below
 ```
 |-------|---------------------------------------------------------------------------------|
 |option | description                                                                     |
