@@ -506,3 +506,34 @@ CONTAINER ID   IMAGE                          COMMAND               CREATED     
 3d8f281d1f89   tektutor/ansible-ubuntu-node   "/usr/sbin/sshd -D"   15 minutes ago   Up 15 minutes   0.0.0.0:2002->22/tcp, :::2002->22/tcp, 0.0.0.0:8002->80/tcp, :::8002->80/tcp   ubuntu2
 a3f850f89f10   tektutor/ansible-ubuntu-node   "/usr/sbin/sshd -D"   15 minutes ago   Up 15 minutes   0.0.0.0:2001->22/tcp, :::2001->22/tcp, 0.0.0.0:8001->80/tcp, :::8001->80/tcp   ubuntu1
 </pre>
+
+### Check if you are able to SSH into ubuntu1 ansible node container
+```
+ssh -p 2001 root@localhost
+```
+
+The expected output is
+<pre>
+[jegan@tektutor]$ <b>ssh -p 2001 root@localhost</b>
+The authenticity of host '[localhost]:2001 ([::1]:2001)' can't be established.
+ECDSA key fingerprint is SHA256:gylBIvnwp8vrM+F3WTVqCLVXq01ZBllfYg9qw+GYIok.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? <b>yes</b>
+Warning: Permanently added '[localhost]:2001' (ECDSA) to the list of known hosts.
+Welcome to Ubuntu 16.04.7 LTS (GNU/Linux 4.18.0-240.el8.x86_64 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+root@ubuntu1:~# <b>exit</b>
+logout
+Connection to localhost closed.
+</pre>
+
