@@ -618,6 +618,7 @@ In the above ansible ad-hoc command
 |hosts  |is the inventory file name                                                       |
 |m      |indicates ansible module                                                         |
 |ping   |is the ansible module ( python script that comes out of the box with Ansible)    |
+|-----------------------------------------------------------------------------------------|
 ```
 
 The expected output is
