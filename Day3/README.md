@@ -890,6 +890,8 @@ PLAY RECAP *********************************************************************
 ubuntu1                    : ok=9    changed=3    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
 ubuntu2                    : ok=9    changed=3    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
 
+#### See if you can access the web page from your lab machine
+```
 [jegan@tektutor Ansible]$ curl localhost:8001
 <html>
 	<head>
@@ -902,7 +904,17 @@ ubuntu2                    : ok=9    changed=3    unreachable=0    failed=0    s
 	</body>
 <html>
 [jegan@tektutor Ansible]$ curl localhost:8002
-</pre>
+<html>
+	<head>
+		<title>Welcome to Ansible Training</title>
+	</head>
+
+	<body>
+		<h1>Provisioned by Docker</h1>
+		<h1>Configured by Ansible</h1>
+	</body>
+<html>
+```
 
 ### Understanding Idempotent behaviour of Ansible
 ```
