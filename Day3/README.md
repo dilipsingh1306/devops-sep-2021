@@ -474,11 +474,11 @@ docker ps
 ```
 The expected output is
 <pre>
-[jegan@tektutor ubuntu-ansible]$ <b>docker run -d --name ubuntu1 --hostname ubuntu1 -p 2001:22 -p 8001:80 tektutor/ansible-ubuntu-node
+[jegan@tektutor]$ <b>docker run -d --name ubuntu1 --hostname ubuntu1 -p 2001:22 -p 8001:80 tektutor/ansible-ubuntu-node
 a3f850f89f107c31afcd830ddb9bca2956d507b22ccbcfd769f3b26b83cb9bb1</b>
-[jegan@tektutor ubuntu-ansible]$ <b>docker run -d --name ubuntu2 --hostname ubuntu2 -p 2002:22 -p 8002:80 tektutor/ansible-ubuntu-node
+[jegan@tektutor]$ <b>docker run -d --name ubuntu2 --hostname ubuntu2 -p 2002:22 -p 8002:80 tektutor/ansible-ubuntu-node
 3d8f281d1f89e8fd751dbd335c4a15783d81292b4735f961653bc1bd61a4745c</b>
-[jegan@tektutor ubuntu-ansible]$ <b>docker ps</b>
+[jegan@tektutor]$ <b>docker ps</b>
 CONTAINER ID   IMAGE                          COMMAND               CREATED          STATUS          PORTS                                                                          NAMES
 <b>3d8f281d1f89   tektutor/ansible-ubuntu-node   "/usr/sbin/sshd -D"   4 seconds ago    Up 1 second     0.0.0.0:2002->22/tcp, :::2002->22/tcp, 0.0.0.0:8002->80/tcp, :::8002->80/tcp   ubuntu2
 a3f850f89f10   tektutor/ansible-ubuntu-node   "/usr/sbin/sshd -D"   15 seconds ago   Up 13 seconds   0.0.0.0:2001->22/tcp, :::2001->22/tcp, 0.0.0.0:8001->80/tcp, :::8001->80/tcp   ubuntu1</b>
