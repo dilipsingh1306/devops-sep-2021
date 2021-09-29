@@ -381,6 +381,9 @@ g++ bin/hello.o bin/main.o -o bin/main.exe</b>
      - Community Edition (CE - Opensource)
      - Enterprise Edition (EE - For Commercial use)
 
+### Docker Architecture
+[!Docker Architecture](DockerArchitecture.png)
+
 ## Docker Commands
 
 ### Downloading docker image from Docker Hub to Local
