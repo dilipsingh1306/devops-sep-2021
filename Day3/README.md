@@ -186,3 +186,55 @@ Bye
 </pre>
 
 As you noticed, the data is intact(safe). We are able to access the data via another container i.e db2.
+
+# Ansible Overview
+- is a Configuration Management Tool 
+- is a Infrastructure as a Code (Iaac) tool
+- helps in automating adminstrative activities
+    - provisioning machines (containers, Virtual Machines, Cloud based Virtual machines in AWS/Azure/GCP etc.,)
+    - installing softwares, uninstalling softwares, configuring softwares, managing users
+- is developed in Python by Michael Deehan
+- Michael Deehan was a former employee of RedHat, he quit RedHat and incorporated Ansible Inc organization
+- Michael Deehan develped <b>Ansible Core<b> as an Opensource project
+- Later RedHat acquired Ansible Inc, hence Ansible Core is now maintained by RedHat(IBM) along with the Opensource community
+ 
+- Ansible Core
+   - is a CLI tool
+   - Domain Specific Language (DSL) - YAML (Yet Another Markup Language - a superset of JSON)
+   - to automated administrative activity Python knowledge is not mandatory
+   - can be installed in Mac/Linux but can't be installed in Windows
+   - can manage Unix,Mac,Linux and Windows Servers
+   - you won't get support from RedHat(IBM) as this is developed by Opensource Community
+   - The machine where Ansible is installed is called as Ansible Controller Machine (ACM)
+   - From ACM we can writing automation scripts called Ansible Playbooks
+   - Ansible Playbook will invoke one or more Ansible Modules
+   - Ansible Modules are Python scripts for Unix/Linux/Mac Nodes
+   - Ansible Modules are Powershell scripts for Windows Nodes
+   - The servers that are managed by Ansible/Ansible AWX/Ansible Tower are called as Ansible Nodes
+   - agentless
+      - on the Ansible Nodes no proprietary software needs to be installed
+      - general requirements
+        Unix/Linux/Mac Ansible Nodes
+          - should have Python installed
+          - should have SSH Server installed
+        Windows Ansible Nodes
+          - should have Powershell (.Net Framework )
+          - shoud have WinRM configured
+ 
+- Ansible AWX (Opensource)
+  - develped on top of Ansible Core
+  - supports WebInterface
+  - you won't get support from RedHat(IBM) as this is developed by Opensource Community
+  
+- RedHat developed Ansible Tower for Enterprise Customers 
+   - is developed on top Ansible AWX
+   - supports Web Interface, 
+   - support Role Based Access Control
+   - you could integrate with Active Directory
+   - you can run the Ansible Playbook from your web browser
+   - you get support from RedHat(IBM) as this is developed by RedHat(IBM)
+
+- some alternate tools
+    - Puppet
+    - Chef
+    - Salt (SaltStack)
