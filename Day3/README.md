@@ -794,3 +794,26 @@ PLAY RECAP *********************************************************************
 ubuntu1                    : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 ubuntu2                    : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 </pre>
+
+### Understanding Idempotent behaviour of Ansible
+```
+ansible-playbook install-nginx-playbook.yml
+```
+The expected output is
+<pre>
+[jegan@tektutor Ansible]$ <b>ansible-playbook install-nginx-playbook.yml</b>
+
+PLAY [This playbook will install,configure and deploys custom web page into ansible nodes] ******************************
+
+TASK [Gathering Facts] **************************************************************************************************
+ok: [ubuntu1]
+ok: [ubuntu2]
+
+TASK [Install nginx web server in Ubuntu nodes] *************************************************************************
+ok: [ubuntu1]
+ok: [ubuntu2]
+
+PLAY RECAP **************************************************************************************************************
+ubuntu1                    : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+ubuntu2                    : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+</pre>
