@@ -49,7 +49,7 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 mysql> 
 </pre>
 
-You may now create some database, tables and insert some records as shown below
+You may now create some database, tables and insert some records as shown below<h1>
 ```
 CREATE DATABASE tektutor;
 USE tektutor;
@@ -291,7 +291,7 @@ As you noticed, the data is intact(safe). We are able to access the data via ano
         Action - No Action
         Report - Task Success with no change(Green)
         
-        CentOS1 Node
+        CentOS1 Node<h1>
         Current State - Already has latest version of Weblogic
         Desired State - Latest version of Weblogic should be installed
         Action - No action 
@@ -680,14 +680,15 @@ ansible -i hosts all -m ping
 ```
 Details of above ansible ad-hoc command are given below
 ```
-|-------|---------------------------------------------------------------------------------|
-|option | description                                                                     |
-|ansible| utility that is used to run any ansible ad-hoc command                          |
-|i      |indicates inventory                                                              |
-|hosts  |is the inventory file name                                                       |
-|m      |indicates ansible module                                                         |
-|ping   |is the ansible module ( python script that comes out of the box with Ansible)    |
-|-----------------------------------------------------------------------------------------|
++------------------------------------------------------------------------------------------+
+|Options | description                                                                     |
+|------------------------------------------------------------------------------------------|
+|ansible | utility that is used to run any ansible ad-hoc command                          |
+|i       | indicates inventory                                                             |
+|hosts   | is the inventory file name                                                      |
+|m       | indicates ansible module                                                        |
+|ping    | is the ansible module ( python script that comes out of the box with Ansible)   |
++------------------------------------------------------------------------------------------+
 ```
 
 The expected output is
