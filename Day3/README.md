@@ -241,9 +241,10 @@ As you noticed, the data is intact(safe). We are able to access the data via ano
 
 ### What is Idempotency
 - generally when automation scripts are executed we expect the machine at a particular desired state after the playbook is executed.
-- 
-  For example:- 
+
+- For example:- 
      We want latest version of weblogic to be installed in all Ansible Nodes(Servers) after executing the Ansible Playbook.
+     
      There are 4 Ansible Node ( ubuntu1, ubuntu2, centos1 and centos2 )
      Current state - Assume that ubuntu1 machine doesn't have weblogic at all
      Current state - Assume that ubuntu2 machine has an older version of weblogic installed
@@ -303,8 +304,7 @@ As you noticed, the data is intact(safe). We are able to access the data via ano
         Action - No action
         Report - Task Success but no change was done(Green)
 
-- Ansible will act on the machine only when the Current state is different from the Desired state of the machine, otherwise
-  no matter how many you repeat the playbook execution it make any change.
+- Ansible will act on the machine only when the Current state is different from the Desired state of the machine, otherwise no matter how many you repeat the playbook execution it make any change.
 - any configuration management tool support his property
 
 
