@@ -195,7 +195,7 @@ As you noticed, the data is intact(safe). We are able to access the data via ano
     - installing softwares, uninstalling softwares, configuring softwares, managing users
 - is developed in Python by Michael Deehan
 - Michael Deehan was a former employee of RedHat, he quit RedHat and incorporated Ansible Inc organization
-- Michael Deehan develped <b>Ansible Core<b> as an Opensource project
+- Michael Deehan develped <b>Ansible Core</b> as an Opensource project
 - Later RedHat acquired Ansible Inc, hence Ansible Core is now maintained by RedHat(IBM) along with the Opensource community
  
 - Ansible Core
