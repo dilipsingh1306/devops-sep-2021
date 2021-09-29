@@ -106,6 +106,14 @@ Now let's create a new db container
 ```
 docker run -d --name db2 --hostname db2 -v /tmp:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root mysql:8
 ```
+The expected output is
+<pre>
+[jegan@tektutor Day3]$ docker rm -f db1
+db1
+[jegan@tektutor Day3]$ docker run -d --name db2 --hostname db2 -v /tmp:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root mysql:8
+77b942116928ac3ada7c3035b95dd1553b932c8c2549b060c5bddadcac953bc0
+</pre>
+
 Let's get inside the db2 container
 ```
 docker exec -it db2 sh
