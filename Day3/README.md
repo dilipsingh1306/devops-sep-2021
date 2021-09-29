@@ -592,12 +592,12 @@ ssh -p 2004 root@localhost
 
 The expected output is
 <pre>
-[jegan@tektutor]$ ssh -p 2004 root@localhost
+[jegan@tektutor]$ <b>ssh -p 2004 root@localhost</b>
 The authenticity of host '[localhost]:2004 ([::1]:2004)' can't be established.
 ECDSA key fingerprint is SHA256:bipIHYUJaG+NiaJ1WHyFNOG7C3hbyJv+BuRDMBlgeVU.
-Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Are you sure you want to continue connecting (yes/no/[fingerprint])? <b>yes<b>
 Warning: Permanently added '[localhost]:2004' (ECDSA) to the list of known hosts.
-[root@centos2 ~]# exit
+[root@centos2 ~]# <b>exit</b>
 logout
 Connection to localhost closed.
 </pre>
