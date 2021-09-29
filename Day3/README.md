@@ -647,3 +647,35 @@ ansible -i hosts all -m shell -a "hostname -i"
 ansible -i hosts ubuntu1 -m ping
 ansible -i hosts ubuntu2 -m setup
 ```
+
+### Running your first Ansible Playbook
+```
+cd ~/Training/devops-sep-2021
+git pull
+cd Day3/Ansible
+ansible-playbook ping.yml
+```
+The expected output is
+<pre>
+[jegan@tektutor Ansible]$ ansible-playbook ping.yml 
+
+PLAY [This playbook demonstrates using ping ansible module] *************************************************************
+
+TASK [Gathering Facts] **************************************************************************************************
+ok: [ubuntu2]
+ok: [ubuntu1]
+ok: [centos2]
+ok: [centos1]
+
+TASK [Ping the node] ****************************************************************************************************
+ok: [ubuntu2]
+ok: [ubuntu1]
+ok: [centos1]
+ok: [centos2]
+
+PLAY RECAP **************************************************************************************************************
+centos1                    : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+centos2                    : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+ubuntu1                    : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+ubuntu2                    : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+</pre>
