@@ -239,6 +239,75 @@ As you noticed, the data is intact(safe). We are able to access the data via ano
     - Chef
     - Salt (SaltStack)
 
+### What is Idempotency
+- generally when automation scripts are executed we expect the machine at a particular desired state after the playbook is executed.
+- 
+  For example:- 
+     We want latest version of weblogic to be installed in all Ansible Nodes(Servers) after executing the Ansible Playbook.
+     There are 4 Ansible Node ( ubuntu1, ubuntu2, centos1 and centos2 )
+     Current state - Assume that ubuntu1 machine doesn't have weblogic at all
+     Current state - Assume that ubuntu2 machine has an older version of weblogic installed
+     Current state - Assume that centos1 machine has latest version of weblogic already installed
+     Current state - Assume that centos2 machine has no weblogic
+     
+     When we execute the Playbook, 
+        Ansible will compare the Current state of the ubuntu1 node and the desired state.
+
+     First Time when Playbook is executed
+        Ubuntu1 Node
+        Current State - No Weblogic present 
+        Desired state - Latest version of Weblogic should be installed
+        Action - Ansible will install latest version of Weblogic.
+        Report - Task Success but made some change(yellow) on the machine.
+        
+        Ubuntu2 Node2
+        Current State - Older version of Weblogic is installed
+        Desired State - Latest version of Weblogic should be installed
+        Action - Ansible will install latest version of Weblogic
+        Report - Task Success but made some change(yellow) on the machine. 
+        
+        CentOS1 Node
+        Current State - Already has latest version of Weblogic
+        Desired State - Latest version of Weblogic should be installed
+        Action - No action 
+        Report - Task Success but no Change was done(Green)
+
+        CentOS2 Node
+        Current State - No Weblogic present
+        Desired State - Latest version of Weblogic should be installed
+        Action - Ansible will install latest version of Weblogic.
+        Report - Task Success but made some change(yellow) on the machine.
+
+     Second Time when Playbook is executed
+        Ubuntu1 Node
+        Current State - Already has latest version of Weblogic
+        Desired state - Latest version of Weblogic should be installed
+        Action - No Action
+        Report - Task Success with no change(Green)
+        
+        Ubuntu2 Node2
+        Current State - Already has latest version of Weblogic
+        Desired State - Latest version of Weblogic should be installed
+        Action - No Action
+        Report - Task Success with no change(Green)
+        
+        CentOS1 Node
+        Current State - Already has latest version of Weblogic
+        Desired State - Latest version of Weblogic should be installed
+        Action - No action 
+        Report - Task Success but no Change was done(Green)
+
+        CentOS2 Node
+        Current State - Already has latest version of Weblogic
+        Desired State - Latest version of Weblogic should be installed
+        Action - No action
+        Report - Task Success but no change was done(Green)
+
+- Ansible will act on the machine only when the Current state is different from the Desired state of the machine, otherwise
+  no matter how many you repeat the playbook execution it make any change.
+- any configuration management tool support his property
+
+
 ### Generating SSH Key pairs for rps user
 When it prompts for options, hit enter ( 3 times )
 ```
@@ -676,6 +745,75 @@ ok: [centos2]
 PLAY RECAP **************************************************************************************************************
 centos1                    : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 centos2                    : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+ubuntu1                    : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+ubuntu2                    : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+</pre>
+
+
+### Structure of Ansible Playbook
+
+- Playbook is a YAML/JSON file
+- File extension can be yaml or yml
+- Every Playbook is a YAML
+- Not all YAML files are Playbook
+- Ansible Playbook has a specific structure
+
+- Each Playbook (YAML) has a list of Play
+- Each Play targets atleast one Ansible Node
+- Each Play optionally has Tasks section
+- Tasks section may have a list of Task
+- Each Task can at the most invoke one Ansible Module
+- Each Play optional has Roles section
+- Roles section may have a list of Role
+- Each item item is preceded with 
+
+### Running the install nginx playbook
+```
+cd ~/Training/devops-sep-2021
+git pull
+cd Day3/Ansible
+ansible-playbook install-nginx-playbook.yml
+```
+
+The expected output is
+<pre>
+[jegan@tektutor Ansible]$ ansible-playbook install-nginx-playbook.yml 
+
+PLAY [This playbook will install,configure and deploys custom web page into ansible nodes] ******************************
+
+TASK [Gathering Facts] **************************************************************************************************
+ok: [ubuntu2]
+ok: [ubuntu1]
+
+TASK [Install nginx web server in Ubuntu nodes] *************************************************************************
+[WARNING]: Updating cache and auto-installing missing dependency: python3-apt
+changed: [ubuntu2]
+changed: [ubuntu1]
+
+PLAY RECAP **************************************************************************************************************
+ubuntu1                    : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+ubuntu2                    : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+</pre>
+
+### Understanding Idempotent behaviour of Ansible
+```
+ansible-playbook install-nginx-playbook.yml
+```
+The expected output is
+<pre>
+[jegan@tektutor Ansible]$ <b>ansible-playbook install-nginx-playbook.yml</b>
+
+PLAY [This playbook will install,configure and deploys custom web page into ansible nodes] ******************************
+
+TASK [Gathering Facts] **************************************************************************************************
+ok: [ubuntu1]
+ok: [ubuntu2]
+
+TASK [Install nginx web server in Ubuntu nodes] *************************************************************************
+ok: [ubuntu1]
+ok: [ubuntu2]
+
+PLAY RECAP **************************************************************************************************************
 ubuntu1                    : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 ubuntu2                    : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 </pre>
