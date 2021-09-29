@@ -604,6 +604,9 @@ Connection to localhost closed.
 
 ### Run your first ansible ad-hoc command
 ```
+cd ~/Training/devops-sep-2021
+git pull
+cd Day3/Ansible
 ansible -i hosts all -m ping
 ```
 
