@@ -657,7 +657,7 @@ ansible-playbook ping.yml
 ```
 The expected output is
 <pre>
-[jegan@tektutor Ansible]$ ansible-playbook ping.yml 
+[jegan@tektutor Ansible]$ <b>ansible-playbook ping.yml</b>
 
 PLAY [This playbook demonstrates using ping ansible module] *************************************************************
 
