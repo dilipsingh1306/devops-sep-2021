@@ -251,54 +251,55 @@ As you noticed, the data is intact(safe). We are able to access the data via ano
      Current state - Assume that centos1 machine has latest version of weblogic already installed
      Current state - Assume that centos2 machine has no weblogic
      
-     When we execute the Playbook, 
+     When we execute the Playboo 
         Ansible will compare the Current state of the ubuntu1 node and the desired state.
 
      First Time when Playbook is executed
-        Ubuntu1 Node
-        Current State - No Weblogic present 
+     
+        Ubuntu1 Node<br>
+	Current State - No Weblogic present 
         Desired state - Latest version of Weblogic should be installed
         Action - Ansible will install latest version of Weblogic.
         Report - Task Success but made some change(yellow) on the machine.
         
-        Ubuntu2 Node2
+        Ubuntu2 Node2<br>
         Current State - Older version of Weblogic is installed
         Desired State - Latest version of Weblogic should be installed
         Action - Ansible will install latest version of Weblogic
         Report - Task Success but made some change(yellow) on the machine. 
         
-        CentOS1 Node
+        CentOS1 Node<br>
         Current State - Already has latest version of Weblogic
         Desired State - Latest version of Weblogic should be installed
         Action - No action 
         Report - Task Success but no Change was done(Green)
 
-        CentOS2 Node
+        CentOS2 Node<br>
         Current State - No Weblogic present
         Desired State - Latest version of Weblogic should be installed
         Action - Ansible will install latest version of Weblogic.
         Report - Task Success but made some change(yellow) on the machine.
 
-     Second Time when Playbook is executed
-        Ubuntu1 Node
+     Second Time when Playbook is executed<br>
+        Ubuntu1 Node<br>
         Current State - Already has latest version of Weblogic
         Desired state - Latest version of Weblogic should be installed
         Action - No Action
         Report - Task Success with no change(Green)
         
-        Ubuntu2 Node2
+        Ubuntu2 Node2<br>
         Current State - Already has latest version of Weblogic
         Desired State - Latest version of Weblogic should be installed
         Action - No Action
         Report - Task Success with no change(Green)
         
-        CentOS1 Node<h1>
+        CentOS1 Node<br>
         Current State - Already has latest version of Weblogic
         Desired State - Latest version of Weblogic should be installed
         Action - No action 
         Report - Task Success but no Change was done(Green)
 
-        CentOS2 Node
+        CentOS2 Node<br>
         Current State - Already has latest version of Weblogic
         Desired State - Latest version of Weblogic should be installed
         Action - No action
