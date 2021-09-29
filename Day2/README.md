@@ -404,7 +404,7 @@ docker.io/library/hello-world:latest
 id
 ```
 
-When you install docker, docker creates a user group called docker.  Any user is who is part of docker group will gain read/write access to docker commands.
+When you install docker, docker creates a user group called docker.  Any user is who is part of docker group will gain access to docker commands.
 ```
 sudo usermod -aG docker rps
 sudo su rps
