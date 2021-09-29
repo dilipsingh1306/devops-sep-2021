@@ -262,3 +262,129 @@ cd Day3/Ansible/AnsibleNodeCustomDockerImages/centos-ansible
 cp ~/.ssh/id_rsa.pub authorized_keys
 docker build -t tektutor/ansible-centos-node .
 ```
+
+The expected output is
+<pre>
+[jegan@tektutor centos-ansible]$ <b>docker build -t tektutor/ansible-centos-node .</b>
+Sending build context to Docker daemon  10.24kB
+Step 1/17 : FROM centos:8
+ ---> 5d0da3dc9764
+Step 2/17 : MAINTAINER Jeganathan Swaminathan <jegan@tektutor.org>
+ ---> Running in c9b9a09b02d5
+Removing intermediate container c9b9a09b02d5
+ ---> 39c83551888c
+Step 3/17 : RUN yum install -y openssh-server openssh-clients
+ ---> Running in aad966af0422
+CentOS Linux 8 - AppStream                      1.1 MB/s | 9.3 MB     00:08    
+CentOS Linux 8 - BaseOS                         1.4 MB/s | 7.5 MB     00:05    
+CentOS Linux 8 - Extras                          16 kB/s |  10 kB     00:00    
+Dependencies resolved.
+================================================================================
+ Package              Arch        Version                     Repository   Size
+================================================================================
+Installing:
+ openssh-clients      x86_64      8.0p1-6.el8_4.2             baseos      667 k
+ openssh-server       x86_64      8.0p1-6.el8_4.2             baseos      484 k
+Installing dependencies:
+ libedit              x86_64      3.1-23.20170329cvs.el8      baseos      102 k
+ openssh              x86_64      8.0p1-6.el8_4.2             baseos      521 k
+
+Transaction Summary
+================================================================================
+Install  4 Packages
+
+Total download size: 1.7 M
+Installed size: 5.5 M
+Downloading Packages:
+(1/4): libedit-3.1-23.20170329cvs.el8.x86_64.rp 157 kB/s | 102 kB     00:00    
+(2/4): openssh-8.0p1-6.el8_4.2.x86_64.rpm       419 kB/s | 521 kB     00:01    
+(3/4): openssh-clients-8.0p1-6.el8_4.2.x86_64.r 463 kB/s | 667 kB     00:01    
+(4/4): openssh-server-8.0p1-6.el8_4.2.x86_64.rp 482 kB/s | 484 kB     00:01    
+--------------------------------------------------------------------------------
+Total                                           852 kB/s | 1.7 MB     00:02     
+warning: /var/cache/dnf/baseos-f6a80ba95cf937f2/packages/libedit-3.1-23.20170329cvs.el8.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID 8483c65d: NOKEY
+CentOS Linux 8 - BaseOS                         1.4 MB/s | 1.6 kB     00:00    
+Importing GPG key 0x8483C65D:
+ Userid     : "CentOS (CentOS Official Signing Key) <security@centos.org>"
+ Fingerprint: 99DB 70FA E1D7 CE22 7FB6 4882 05B5 55B3 8483 C65D
+ From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
+Key imported successfully
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                        1/1 
+  Running scriptlet: openssh-8.0p1-6.el8_4.2.x86_64                         1/4 
+  Installing       : openssh-8.0p1-6.el8_4.2.x86_64                         1/4 
+  Installing       : libedit-3.1-23.20170329cvs.el8.x86_64                  2/4 
+  Installing       : openssh-clients-8.0p1-6.el8_4.2.x86_64                 3/4 
+  Running scriptlet: openssh-server-8.0p1-6.el8_4.2.x86_64                  4/4 
+  Installing       : openssh-server-8.0p1-6.el8_4.2.x86_64                  4/4 
+  Running scriptlet: openssh-server-8.0p1-6.el8_4.2.x86_64                  4/4 
+  Verifying        : libedit-3.1-23.20170329cvs.el8.x86_64                  1/4 
+  Verifying        : openssh-8.0p1-6.el8_4.2.x86_64                         2/4 
+  Verifying        : openssh-clients-8.0p1-6.el8_4.2.x86_64                 3/4 
+  Verifying        : openssh-server-8.0p1-6.el8_4.2.x86_64                  4/4 
+
+Installed:
+  libedit-3.1-23.20170329cvs.el8.x86_64   openssh-8.0p1-6.el8_4.2.x86_64        
+  openssh-clients-8.0p1-6.el8_4.2.x86_64  openssh-server-8.0p1-6.el8_4.2.x86_64 
+
+Complete!
+Removing intermediate container aad966af0422
+ ---> 46c8a7fe1138
+Step 4/17 : RUN ln -s -f /usr/libexec/platform-python3.6 /usr/bin/python
+ ---> Running in 6816c6850c2f
+Removing intermediate container 6816c6850c2f
+ ---> ea42dc05e80c
+Step 5/17 : RUN echo 'root:root' | chpasswd
+ ---> Running in a56f71f9bf9b
+Removing intermediate container a56f71f9bf9b
+ ---> d0051b2582b7
+Step 6/17 : RUN usermod -aG wheel root
+ ---> Running in db5e34c05572
+Removing intermediate container db5e34c05572
+ ---> fe9c543ba0df
+Step 7/17 : RUN sed -ri 's/^session\s+required\s+pam_loginuid.so$/session optional pam_loginuid.so/' /etc/pam.d/sshd
+ ---> Running in f7ac895400f4
+Removing intermediate container f7ac895400f4
+ ---> ce88d958dd38
+Step 8/17 : COPY sshd_config /etc/ssh/sshd_config
+ ---> b55ac2897e43
+Step 9/17 : COPY sudoers /etc/sudoers
+ ---> fc01794f064f
+Step 10/17 : RUN mkdir -p /root/.ssh
+ ---> Running in 5e08e05a09ae
+Removing intermediate container 5e08e05a09ae
+ ---> 219e10d57261
+Step 11/17 : COPY authorized_keys /root/.ssh/authorized_keys
+ ---> c3f894dd50d3
+Step 12/17 : RUN chmod 700 -R /root/.ssh
+ ---> Running in 136a1d334120
+Removing intermediate container 136a1d334120
+ ---> eb624741c512
+Step 13/17 : RUN mkdir -m 700 /var/run/sshd
+ ---> Running in a77cdcc9346b
+Removing intermediate container a77cdcc9346b
+ ---> fca7f9e453ff
+Step 14/17 : RUN ssh-keygen -A && rm -f /run/nologin
+ ---> Running in bbfb19561a4e
+ssh-keygen: generating new host keys: RSA DSA ECDSA ED25519 
+Removing intermediate container bbfb19561a4e
+ ---> 6c66fb5c65c3
+Step 15/17 : EXPOSE 22
+ ---> Running in 4fc9f034cea8
+Removing intermediate container 4fc9f034cea8
+ ---> 5556348bbb09
+Step 16/17 : EXPOSE 80
+ ---> Running in 89de4eec60a6
+Removing intermediate container 89de4eec60a6
+ ---> 6b3c154fd98a
+Step 17/17 : CMD ["/usr/sbin/sshd", "-D"]
+ ---> Running in db2e1aaf8f35
+Removing intermediate container db2e1aaf8f35
+ ---> 3724c29f8afe
+Successfully built 3724c29f8afe
+Successfully tagged tektutor/ansible-centos-node:latest
+</pre>
