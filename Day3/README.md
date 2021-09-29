@@ -1,3 +1,3 @@
 ### Port Forwarding
 
-[!Docker Port Forwarding](PortForwarding.png)
+![Docker Port Forwarding](PortForwarding.png)
