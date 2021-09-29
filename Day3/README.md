@@ -537,3 +537,32 @@ logout
 Connection to localhost closed.
 </pre>
 
+### Check if you are able to SSH into ubuntu2 ansible node container
+```
+ssh -p 2002 root@localhost
+```
+
+The expected output is
+<pre>
+[jegan@tektutor]$ <b>ssh -p 2002 root@localhost</b>
+The authenticity of host '[localhost]:2002 ([::1]:2002)' can't be established.
+ECDSA key fingerprint is SHA256:gylBIvnwp8vrM+F3WTVqCLVXq01ZBllfYg9qw+GYIok.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '[localhost]:2002' (ECDSA) to the list of known hosts.
+Welcome to Ubuntu 16.04.7 LTS (GNU/Linux 4.18.0-240.el8.x86_64 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+root@ubuntu2:~# <b>exit</b>
+logout
+Connection to localhost closed.
+</pre>
