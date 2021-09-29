@@ -238,3 +238,27 @@ As you noticed, the data is intact(safe). We are able to access the data via ano
     - Puppet
     - Chef
     - Salt (SaltStack)
+
+### Generating SSH Key pairs for rps user
+When it prompts for options, hit enter ( 3 times )
+```
+ssh-keygen
+```
+
+### Preparing a custom Ansible node image using Ubuntu as the base image
+```
+cd ~/Training/devops-sep-2021
+git pull
+cd Day3/Ansible/AnsibleNodeCustomDockerImages/ubuntu-ansible
+cp ~/.ssh/id_rsa.pub authorized_keys
+docker build -t tektutor/ansible-ubuntu-node .
+```
+
+### Preparing a custom Ansible node image using CentOS as the base image
+```
+cd ~/Training/devops-sep-2021
+git pull
+cd Day3/Ansible/AnsibleNodeCustomDockerImages/centos-ansible
+cp ~/.ssh/id_rsa.pub authorized_keys
+docker build -t tektutor/ansible-centos-node .
+```
