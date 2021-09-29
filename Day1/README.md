@@ -41,6 +41,9 @@ In order to apply the changes, let's run
 source ~/.bashrc
 ```
 
+### Maven Architecture
+![Maven Architecture](https://github.com/tektutor/devops-sep-2021/edit/main/Day1/Maven Architecture.png)
+
 ### Check if you have maven build tool installed
 ```
 mvn --version
