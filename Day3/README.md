@@ -49,7 +49,7 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 mysql> 
 </pre>
 
-You may now create some database, tables and insert some records as shown below<h1>
+You may now create some database, tables and insert some records as shown below
 ```
 CREATE DATABASE tektutor;
 USE tektutor;
