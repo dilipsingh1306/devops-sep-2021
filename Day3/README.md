@@ -14,11 +14,12 @@ Hence, we need to store the container application data in an external storage.  
 
 Creating a mysql container with volume mounting
 ```
-docker run -d --name db1 --hostname db1 -v /tmp:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root mysql:8
+mkdir -p /home/rps/mysql
+docker run -d --name db1 --hostname db1 -v /home/rps/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root mysql:8
 ```
 The expected output is
 <pre>
-[jegan@tektutor Day3]$ docker run -d --name db1 --hostname db1 -e MYSQL_ROOT_PASSWORD=root -v tmp:/var/lib/mysql mysql:8
+[jegan@tektutor Day3]$ docker run -d --name db1 --hostname db1 -e MYSQL_ROOT_PASSWORD=root -v /home/rps/mysql:/var/lib/mysql mysql:8
 0dd8bdf0d935940659d3efef7321c0855928c615044a8fd68effba8d653232fa
 </pre>
 
@@ -104,13 +105,13 @@ docker rm -f db1
 ```
 Now let's create a new db container
 ```
-docker run -d --name db2 --hostname db2 -v /tmp:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root mysql:8
+docker run -d --name db2 --hostname db2 -v /home/rps/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root mysql:8
 ```
 The expected output is
 <pre>
 [jegan@tektutor Day3]$ docker rm -f db1
 db1
-[jegan@tektutor Day3]$ docker run -d --name db2 --hostname db2 -v /tmp:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root mysql:8
+[jegan@tektutor Day3]$ docker run -d --name db2 --hostname db2 -v /home/rps/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root mysql:8
 77b942116928ac3ada7c3035b95dd1553b932c8c2549b060c5bddadcac953bc0
 </pre>
 
@@ -128,7 +129,7 @@ exit
 Type password as 'root'
 The expected output is
 <pre>
-[jegan@tektutor Day3]$ docker run -d --name db2 --hostname db2 -v /tmp:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root mysql:8
+[jegan@tektutor Day3]$ docker run -d --name db2 --hostname db2 -v /home/rps/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root mysql:8
 77b942116928ac3ada7c3035b95dd1553b932c8c2549b060c5bddadcac953bc0
 [jegan@tektutor Day3]$ docker exec -it db2 sh
 # mysql -u root -p
