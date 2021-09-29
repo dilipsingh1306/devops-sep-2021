@@ -327,7 +327,7 @@ The expected output is
 [jegan@tektutor AnsibleNodeCustomDockerImages]$ cd ubuntu-ansible/
 [jegan@tektutor ubuntu-ansible]$ ls
 Dockerfile
-[jegan@tektutor ubuntu-ansible]$ </b>cp ~/.ssh/id_rsa.pub authorized_keys</b>
+[jegan@tektutor ubuntu-ansible]$ <b>cp ~/.ssh/id_rsa.pub authorized_keys</b>
 [jegan@tektutor ubuntu-ansible]$ <b>docker build -t tektutor/ansible-ubuntu-node .</b>
 Sending build context to Docker daemon  4.096kB
 Step 1/12 : FROM ubuntu:16.04
