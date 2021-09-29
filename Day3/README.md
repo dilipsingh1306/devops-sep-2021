@@ -253,6 +253,58 @@ cd Day3/Ansible/AnsibleNodeCustomDockerImages/ubuntu-ansible
 cp ~/.ssh/id_rsa.pub authorized_keys
 docker build -t tektutor/ansible-ubuntu-node .
 ```
+The expected output is
+<pre>
+[jegan@tektutor AnsibleNodeCustomDockerImages]$ cd ubuntu-ansible/
+[jegan@tektutor ubuntu-ansible]$ ls
+Dockerfile
+[jegan@tektutor ubuntu-ansible]$ </b>cp ~/.ssh/id_rsa.pub authorized_keys</b>
+[jegan@tektutor ubuntu-ansible]$ <b>docker build -t tektutor/ansible-ubuntu-node .</b>
+Sending build context to Docker daemon  4.096kB
+Step 1/12 : FROM ubuntu:16.04
+ ---> b6f507652425
+Step 2/12 : MAINTAINER Jeganathan Swaminathan <jegan@tektutor.org>
+ ---> Using cache
+ ---> bd37dc33a524
+Step 3/12 : RUN apt-get update && apt-get install -y openssh-server python3
+ ---> Using cache
+ ---> ff0d6fcd7eb3
+Step 4/12 : RUN mkdir -p /var/run/sshd
+ ---> Using cache
+ ---> d7303fee625b
+Step 5/12 : RUN echo 'root:root' | chpasswd
+ ---> Running in 12199f9f664e
+Removing intermediate container 12199f9f664e
+ ---> fdf3d5a9a1c1
+Step 6/12 : RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+ ---> Running in d0bfbe40e452
+Removing intermediate container d0bfbe40e452
+ ---> 558992859eee
+Step 7/12 : RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
+ ---> Running in 8725f1239d8a
+Removing intermediate container 8725f1239d8a
+ ---> 6e0715994560
+Step 8/12 : RUN mkdir -p /root/.ssh
+ ---> Running in 77c67a1fc482
+Removing intermediate container 77c67a1fc482
+ ---> 7dbf8181e1f8
+Step 9/12 : COPY authorized_keys /root/.ssh/authorized_keys
+ ---> 6ebd7e6ecace
+Step 10/12 : EXPOSE 22
+ ---> Running in 5c9aae1600fa
+Removing intermediate container 5c9aae1600fa
+ ---> caa70866cedd
+Step 11/12 : EXPOSE 80
+ ---> Running in 1c6e88a9eef7
+Removing intermediate container 1c6e88a9eef7
+ ---> 61de81243617
+Step 12/12 : CMD ["/usr/sbin/sshd", "-D"]
+ ---> Running in 8ff9685c09e6
+Removing intermediate container 8ff9685c09e6
+ ---> 3340a12056f1
+<b>Successfully built 3340a12056f1
+Successfully tagged tektutor/ansible-ubuntu-node:latest</b>
+</pre>
 
 ### Preparing a custom Ansible node image using CentOS as the base image
 ```
@@ -385,6 +437,28 @@ Step 17/17 : CMD ["/usr/sbin/sshd", "-D"]
  ---> Running in db2e1aaf8f35
 Removing intermediate container db2e1aaf8f35
  ---> 3724c29f8afe
-Successfully built 3724c29f8afe
-Successfully tagged tektutor/ansible-centos-node:latest
+<b>Successfully built 3724c29f8afe
+Successfully tagged tektutor/ansible-centos-node:latest</b>
+</pre>
+
+### List and see if the custome images are there
+```
+docker images
+```
+
+The expected output is
+<pre>
+[jegan@tektutor ubuntu-ansible]$ <b>docker images</b>
+REPOSITORY                                TAG       IMAGE ID       CREATED          SIZE
+<b>tektutor/ansible-ubuntu-node              latest    3340a12056f1   3 minutes ago    220MB
+tektutor/ansible-centos-node              latest    3724c29f8afe   11 minutes ago   284MB</b>
+alpine-myubuntu                           latest    dc338710c6fa   20 hours ago     8.63MB
+myubuntu                                  latest    0465102ea9b9   21 hours ago     112MB
+nginx                                     1.20      10e31fc2b144   25 hours ago     133MB
+mysql                                     8         2fe463762680   25 hours ago     514MB
+centos                                    8         5d0da3dc9764   13 days ago      231MB
+docker.bintray.io/jfrog/artifactory-oss   latest    f96008c316f4   2 weeks ago      980MB
+ubuntu                                    16.04     b6f507652425   4 weeks ago      135MB
+ubuntu                                    20.04     fb52e22af1b0   4 weeks ago      72.8MB
+alpine                                    3         14119a10abf4   4 weeks ago      5.6MB
 </pre>
