@@ -601,3 +601,27 @@ Warning: Permanently added '[localhost]:2004' (ECDSA) to the list of known hosts
 logout
 Connection to localhost closed.
 </pre>
+
+### Run your first ansible ad-hoc command
+```
+ansible -i hosts all -m ping
+```
+
+The expected output is
+<pre>
+[jegan@tektutor Ansible]$ <b>ansible -i hosts all -m ping</b>
+ubuntu2 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+ubuntu1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+</pre>
