@@ -80,23 +80,23 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 mysql> CREATE DATABASE tektutor;
 Query OK, 1 row affected (0.00 sec)
 
-mysql> USE tektutor;
+mysql> <b>USE tektutor;</b>
 Database changed
-mysql> CREATE TABLE training (id int, name VARCHAR(25), duration VARCHAR(25));
+mysql> <b>CREATE TABLE training (id int, name VARCHAR(25), duration VARCHAR(25));</b>
 Query OK, 0 rows affected (0.03 sec)
 
-mysql> INSERT INTO training VALUES ( 1, "DevOps", "5 days" );
+mysql> <b>INSERT INTO training VALUES ( 1, "DevOps", "5 days" );</b>
 Query OK, 1 row affected (0.02 sec)
 
-mysql> INSERT INTO training VALUES ( 2, "Microservices", "5 days" );
+mysql> <b>INSERT INTO training VALUES ( 2, "Microservices", "5 days" );</b>
 Query OK, 1 row affected (0.00 sec)
 
-mysql> INSERT INTO training VALUES ( 3, "OpenShift", "5 days" );
+mysql> <b>INSERT INTO training VALUES ( 3, "OpenShift", "5 days" );</b>
 Query OK, 1 row affected (0.01 sec)
 
-mysql> exit
+mysql> <b>exit</b>
 Bye
-# exit
+# <b>exit</b>
 </pre>
 
 Now delete the db1 container
@@ -111,7 +111,7 @@ The expected output is
 <pre>
 [jegan@tektutor Day3]$ <b>docker rm -f db1</b>
 db1
-[jegan@tektutor Day3]$ docker run -d --name db2 --hostname db2 -v /home/rps/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root mysql:8
+[jegan@tektutor Day3]$ <b>docker run -d --name db2 --hostname db2 -v /home/rps/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root mysql:8</b>
 77b942116928ac3ada7c3035b95dd1553b932c8c2549b060c5bddadcac953bc0
 </pre>
 
@@ -180,9 +180,9 @@ mysql> <b>SELECT * FROM training;</b>
 +------+--------+----------+
 1 row in set (0.00 sec)
 
-mysql> exit
+mysql> <b>exit</b>
 Bye
-# exit
+# <b>exit</b>
 </pre>
 
 As you noticed, the data is intact(safe). We are able to access the data via another container i.e db2.
