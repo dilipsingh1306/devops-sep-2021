@@ -462,3 +462,16 @@ ubuntu                                    16.04     b6f507652425   4 weeks ago  
 ubuntu                                    20.04     fb52e22af1b0   4 weeks ago      72.8MB
 alpine                                    3         14119a10abf4   4 weeks ago      5.6MB
 </pre>
+
+### Creating ubuntu ansible node containers
+```
+docker run -d --name ubuntu1 --hostname ubuntu1 -p 2001:22 -p 8001:80 tektutor/ansible-ubuntu-node 
+docker run -d --name ubuntu2 --hostname ubuntu2 -p 2002:22 -p 8002:80 tektutor/ansible-ubuntu-node 
+```
+
+### Creating centos ansible node containers
+```
+docker run -d --name centos1 --hostname centos1 -p 2003:22 -p 8003:80 tektutor/ansible-centos-node 
+docker run -d --name centos2 --hostname centos2 -p 2004:22 -p 8004:80 tektutor/ansible-centos-node 
+```
+
