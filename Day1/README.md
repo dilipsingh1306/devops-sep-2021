@@ -42,7 +42,7 @@ source ~/.bashrc
 ```
 
 ### Maven Architecture
-![Maven Architecture](MavenArchitecture.png)
+![Maven Architecture](MavenArchitecture.png){:height="50%" width="50%"}
 
 ### Check if you have maven build tool installed
 ```
