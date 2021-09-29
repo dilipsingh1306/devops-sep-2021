@@ -489,4 +489,20 @@ a3f850f89f10   tektutor/ansible-ubuntu-node   "/usr/sbin/sshd -D"   15 seconds a
 docker run -d --name centos1 --hostname centos1 -p 2003:22 -p 8003:80 tektutor/ansible-centos-node 
 docker run -d --name centos2 --hostname centos2 -p 2004:22 -p 8004:80 tektutor/ansible-centos-node 
 ```
-
+List and see if the centos1 and centos2 containers are running
+```
+docker ps
+```
+The expected output is
+<pre>
+[jegan@tektutor]$ <b>docker run -d --name centos1 --hostname centos1 -p 2003:22 -p 8003:80 tektutor/ansible-centos-node</b>
+653251b6ff22165fd90a7ab732cc7e11b7972d5c1b43b6276e73d1c2f7f9bd68
+[jegan@tektutor]$ <b>docker run -d --name centos2 --hostname centos2 -p 2004:22 -p 8004:80 tektutor/ansible-centos-node</b>
+d8b5ab3dc18b89841b4c5f5ffb8b909e2ed6e5124810eebf1d61b27430857a76
+[jegan@tektutor]$ <b>docker ps</b>
+CONTAINER ID   IMAGE                          COMMAND               CREATED          STATUS          PORTS                                                                          NAMES
+<b>d8b5ab3dc18b   tektutor/ansible-centos-node   "/usr/sbin/sshd -D"   4 seconds ago    Up 3 seconds    0.0.0.0:2004->22/tcp, :::2004->22/tcp, 0.0.0.0:8004->80/tcp, :::8004->80/tcp   centos2
+653251b6ff22   tektutor/ansible-centos-node   "/usr/sbin/sshd -D"   15 seconds ago   Up 14 seconds   0.0.0.0:2003->22/tcp, :::2003->22/tcp, 0.0.0.0:8003->80/tcp, :::8003->80/tcp   centos1</b>
+3d8f281d1f89   tektutor/ansible-ubuntu-node   "/usr/sbin/sshd -D"   15 minutes ago   Up 15 minutes   0.0.0.0:2002->22/tcp, :::2002->22/tcp, 0.0.0.0:8002->80/tcp, :::8002->80/tcp   ubuntu2
+a3f850f89f10   tektutor/ansible-ubuntu-node   "/usr/sbin/sshd -D"   15 minutes ago   Up 15 minutes   0.0.0.0:2001->22/tcp, :::2001->22/tcp, 0.0.0.0:8001->80/tcp, :::8001->80/tcp   ubuntu1
+</pre>
