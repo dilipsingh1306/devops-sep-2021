@@ -566,3 +566,38 @@ root@ubuntu2:~# <b>exit</b>
 logout
 Connection to localhost closed.
 </pre>
+
+### Check if you are able to SSH into centos1 ansible node container
+```
+ssh -p 2003 root@localhost
+```
+
+The expected output is
+<pre>
+[jegan@tektutor]$ <b>ssh -p 2003 root@localhost</b>
+The authenticity of host '[localhost]:2003 ([::1]:2003)' can't be established.
+ECDSA key fingerprint is SHA256:bipIHYUJaG+NiaJ1WHyFNOG7C3hbyJv+BuRDMBlgeVU.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '[localhost]:2003' (ECDSA) to the list of known hosts.
+[root@centos1 ~]# exit
+logout
+Connection to localhost closed.
+[jegan@tektutor ubuntu-ansible]$ 
+</pre>
+
+### Check if you are able to SSH into centos2 ansible node container
+```
+ssh -p 2004 root@localhost
+```
+
+The expected output is
+<pre>
+[jegan@tektutor]$ ssh -p 2004 root@localhost
+The authenticity of host '[localhost]:2004 ([::1]:2004)' can't be established.
+ECDSA key fingerprint is SHA256:bipIHYUJaG+NiaJ1WHyFNOG7C3hbyJv+BuRDMBlgeVU.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '[localhost]:2004' (ECDSA) to the list of known hosts.
+[root@centos2 ~]# exit
+logout
+Connection to localhost closed.
+</pre>
