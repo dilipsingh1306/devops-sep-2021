@@ -782,18 +782,139 @@ The expected output is
 PLAY [This playbook will install,configure and deploys custom web page into ansible nodes] ******************************
 
 TASK [Gathering Facts] **************************************************************************************************
+ok: [ubuntu1]
+ok: [ubuntu2]
+
+TASK [Install nginx web server in Ubuntu nodes] *************************************************************************
 ok: [ubuntu2]
 ok: [ubuntu1]
 
-TASK [Install nginx web server in Ubuntu nodes] *************************************************************************
-[WARNING]: Updating cache and auto-installing missing dependency: python3-apt
+TASK [Install curl in Ubuntu nodes] *************************************************************************************
+ok: [ubuntu1]
+ok: [ubuntu2]
+
+TASK [Check if the web page is accessible using curl] *******************************************************************
+[WARNING]: Consider using the get_url or uri module rather than running 'curl'.  If you need to use command because
+get_url or uri is insufficient you can add 'warn: false' to this command task or set 'command_warnings=False' in
+ansible.cfg to get rid of this message.
+changed: [ubuntu2]
+changed: [ubuntu1]
+
+TASK [debug] ************************************************************************************************************
+ok: [ubuntu1] => {
+    "output": {
+        "changed": true,
+        "cmd": "curl localhost",
+        "delta": "0:00:00.023242",
+        "end": "2021-09-29 12:34:38.043293",
+        "failed": false,
+        "rc": 0,
+        "start": "2021-09-29 12:34:38.020051",
+        "stderr": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   178  100   178    0     0  33221      0 --:--:-- --:--:-- --:--:-- 35600",
+        "stderr_lines": [
+            "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current",
+            "                                 Dload  Upload   Total   Spent    Left  Speed",
+            "",
+            "  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0",
+            "100   178  100   178    0     0  33221      0 --:--:-- --:--:-- --:--:-- 35600"
+        ],
+        "stdout": "<html>\r\n<head><title>403 Forbidden</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>403 Forbidden</h1></center>\r\n<hr><center>nginx/1.10.3 (Ubuntu)</center>\r\n</body>\r\n</html>",
+        "stdout_lines": [
+            "<html>",
+            "<head><title>403 Forbidden</title></head>",
+            "<body bgcolor=\"white\">",
+            "<center><h1>403 Forbidden</h1></center>",
+            "<hr><center>nginx/1.10.3 (Ubuntu)</center>",
+            "</body>",
+            "</html>"
+        ],
+        "warnings": [
+            "Consider using the get_url or uri module rather than running 'curl'.  If you need to use command because get_url or uri is insufficient you can add 'warn: false' to this command task or set 'command_warnings=False' in ansible.cfg to get rid of this message."
+        ]
+    }
+}
+ok: [ubuntu2] => {
+    "output": {
+        "changed": true,
+        "cmd": "curl localhost",
+        "delta": "0:00:00.021902",
+        "end": "2021-09-29 12:34:38.048101",
+        "failed": false,
+        "rc": 0,
+        "start": "2021-09-29 12:34:38.026199",
+        "stderr": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   178  100   178    0     0  30552      0 --:--:-- --:--:-- --:--:-- 35600",
+        "stderr_lines": [
+            "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current",
+            "                                 Dload  Upload   Total   Spent    Left  Speed",
+            "",
+            "  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0",
+            "100   178  100   178    0     0  30552      0 --:--:-- --:--:-- --:--:-- 35600"
+        ],
+        "stdout": "<html>\r\n<head><title>403 Forbidden</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>403 Forbidden</h1></center>\r\n<hr><center>nginx/1.10.3 (Ubuntu)</center>\r\n</body>\r\n</html>",
+        "stdout_lines": [
+            "<html>",
+            "<head><title>403 Forbidden</title></head>",
+            "<body bgcolor=\"white\">",
+            "<center><h1>403 Forbidden</h1></center>",
+            "<hr><center>nginx/1.10.3 (Ubuntu)</center>",
+            "</body>",
+            "</html>"
+        ],
+        "warnings": [
+            "Consider using the get_url or uri module rather than running 'curl'.  If you need to use command because get_url or uri is insufficient you can add 'warn: false' to this command task or set 'command_warnings=False' in ansible.cfg to get rid of this message."
+        ]
+    }
+}
+
+TASK [Start nginx web server when curl fails] ***************************************************************************
+skipping: [ubuntu1]
+skipping: [ubuntu2]
+
+TASK [Configure document root folder to our custom folder] **************************************************************
+ok: [ubuntu1]
+ok: [ubuntu2]
+
+TASK [Create the custom document root folder] ***************************************************************************
+ok: [ubuntu1]
+ok: [ubuntu2]
+
+TASK [Reload the nginx configuration to apply changes] ******************************************************************
+changed: [ubuntu1]
+changed: [ubuntu2]
+
+TASK [Deploy custom web page into nginx web server] *********************************************************************
 changed: [ubuntu2]
 changed: [ubuntu1]
 
 PLAY RECAP **************************************************************************************************************
-ubuntu1                    : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
-ubuntu2                    : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
-</pre>
+ubuntu1                    : ok=9    changed=3    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+ubuntu2                    : ok=9    changed=3    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
+#### See if you can access the web page from your lab machine
+```
+[jegan@tektutor Ansible]$ curl localhost:8001
+<html>
+	<head>
+		<title>Welcome to Ansible Training</title>
+	</head>
+
+	<body>
+		Provisioned by Docker
+		Configured by Ansible
+	</body>
+</html>
+[jegan@tektutor Ansible]$ curl localhost:8002
+<html>
+	<head>
+		<title>Welcome to Ansible Training</title>
+	</head>
+
+	<body>
+		Provisioned by Docker
+		Configured by Ansible
+	</body>
+</html>
+```
 
 ### Understanding Idempotent behaviour of Ansible
 ```
