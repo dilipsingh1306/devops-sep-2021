@@ -126,7 +126,8 @@ SELECT * FROM training;
 exit
 exit
 ```
-Type password as 'root'
+Type password as 'root'.
+
 The expected output is
 <pre>
 [jegan@tektutor Day3]$ docker run -d --name db2 --hostname db2 -v /home/rps/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root mysql:8
