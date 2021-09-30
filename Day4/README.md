@@ -265,11 +265,13 @@ Click on "Start using Jenkins" button.
 ![Dashboard](7.jpg)
 If everything went well, you will see this page. You can proceed with further configurations.
 
-
 #### Configuring JDK and Maven
 Click on Manage Jenkins --> Global Tool Configurations
 ![Dashboard](8.jpg)
 
+
+#### Global Tool Configurations
+![Dashboard](9.jpg)
 
 
 
