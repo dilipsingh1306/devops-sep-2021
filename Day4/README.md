@@ -253,8 +253,12 @@ You need to create a user with your personal email id
 Click on "Save and Continue" button.
 </pre>
 
-#### Jenkins Dashboard web page
-![Dashboard](5.jpg)
+#### Getting Started
+![GettingStarted](5.jpg)
+Click on "Save and Finish" button without making any change in URL.
+
+#### Dashboard
+![Dashboard](6.jpg)
 
 
 
