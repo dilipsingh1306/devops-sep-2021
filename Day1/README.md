@@ -825,3 +825,20 @@ Uploaded to artifactory: http://172.17.0.2:8082/artifactory/tektutor/org/tektuto
 - Once the automated test cases added by Dev Team works fine, then there should be a way to provision
   QA environment and developer certified binaries will be promoted for QA automated testing.
 - Once the automated test cases added by QA Team works fine, then there should be a way to provision pre-prod environment automatically and promote the QA certified binaries to the pre-prod environment for further Production like test.
+
+### What is Jenkins?
+- Continuous Integration(CI) Build Server
+- it was developed by Kohsuke Kawaguchi was a former Sun MicroSystem employed
+- it was developed in Java
+- however it can be used by a programming language stack
+- it is a opensource CI Server
+- Sun Microsystems was then acquired by Oracle led by Larry Ellison
+- Originally it was called Hudson, the team got split into two, one half of the team stayed back in Oracle 
+  and they continue to develop the tool as Hudson, while Kohsuke Kawaguchi and other like minded folks came out of
+  Oracle and they continue to develop the tool as Jenkins.  
+- Jenkins is a new branch created out of Hudson.
+- Some alternates to Jenkins
+  - Commercial version of Jenkins is called Cloudbees
+  - Team City
+  - Bamboo
+  - Microsoft Team Foundataion Server (TFS)
