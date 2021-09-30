@@ -207,3 +207,10 @@ cd ~/Downloads
 java -jar ./jenkins.war
 ```
 In case you need terminal, you may create a new tab. Bottomline, don't stop jenkins by mistake :)
+
+### Accessing Jenkins from Lab machine Web browser
+```
+http://localhost:8080
+```
+The expected output is
+![Jenkins](1.jpg)
