@@ -225,4 +225,8 @@ You will get a hash key something similar to
 You need to copy your initial admin password and paste it and clicke on Continue button.
 
 ##### You will then get the below screen
+You need to click on Install Suggested Plugins here.
 ![Second Screen](2.jpg)
+
+
+
