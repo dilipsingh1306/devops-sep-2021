@@ -120,7 +120,7 @@ ansible-playbook fetch-artifacts-from-artifactory-playbook.yml
 ```
 The expected output is
 <pre>
-[jegan@tektutor Ansible]$ ansible-playbook fetch-artifacts-from-artifactory-playbook.yml 
+[jegan@tektutor Ansible]$ <b>ansible-playbook fetch-artifacts-from-artifactory-playbook.yml</b>
 
 PLAY [This playbook demonstrates downloading artifacts from JFrog Artifactory] ******************************************
 
