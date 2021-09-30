@@ -193,3 +193,17 @@ In case the above playbook fails to download, you may have to look into the belo
   - Team City
   - Bamboo
   - Microsoft Team Foundataion Server (TFS)
+
+### Downloading Jenkins
+```
+cd ~
+wget https://get.jenkins.io/war-stable/2.303.1/jenkins.war
+```
+
+### Starting Jenkins from CLI
+This will launch Jenkins in an interactive style, hence by mistake typing Ctrl + c will terminate Jenkins.
+```
+cd ~/Downloads
+java -jar ./jenkins.war
+```
+In case you need terminal, you may create a new tab. Bottomline, don't stop jenkins by mistake :)
