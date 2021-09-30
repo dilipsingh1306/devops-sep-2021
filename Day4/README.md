@@ -257,8 +257,12 @@ Click on "Save and Continue" button.
 ![GettingStarted](5.jpg)
 Click on "Save and Finish" button without making any change in URL.
 
-#### Dashboard
+#### Getting Started Dashboard
 ![Dashboard](6.jpg)
+Click on "Start using Jenkins" button.
+
+#### Dashboard
+![Dashboard](7.jpg)
 
 
 
