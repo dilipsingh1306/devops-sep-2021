@@ -399,7 +399,7 @@ mvn test -P package
      - Enterprise Edition (EE - For Commercial use)
 
 ### Docker Architecture
-[!Docker Architecture](DockerArchitecture.png)
+![Docker Architecture](DockerArchitecture.png)
 
 ## Docker Commands
 
