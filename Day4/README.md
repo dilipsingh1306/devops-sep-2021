@@ -237,8 +237,8 @@ At times, certain plugin installation may fail.  In case it happens, you may ret
 
 You need to create a user with your personal email id
 <pre>
-+-----------------------------------------------------+
-| Field         |    Value                            |
++--------------------------------------------------------+
+| Field            |    Value                            |
 +--------------------------------------------------------+
 | Username         |  jegan                              |
 +--------------------------------------------------------+
@@ -266,12 +266,22 @@ Click on "Start using Jenkins" button.
 If everything went well, you will see this page. You can proceed with further configurations.
 
 #### Configuring JDK and Maven
-Click on Manage Jenkins --> Global Tool Configurations
+Click on Manage Jenkins --> Manage Plugins
 ![Dashboard](8.jpg)
 
-
-#### Global Tool Configurations
+#### Installing additonal plugins
 ![Dashboard](9.jpg)
+
+You need to search and select the below plugins
+1. Maven Integration
+2. Docker
+3. Ansible
+4. Build Pipeline
+
+Select "Install without Restart" button at the bottom.
+
+#### Installing plugin progress
+![image](10.jpg)
 
 
 
