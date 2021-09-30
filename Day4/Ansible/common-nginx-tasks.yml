@@ -13,5 +13,9 @@
 - name: Reload the nginx configuration to apply changes
   shell: nginx -s reload
 
+- name: Retrieve IP Adress
+  shell: hostname -i
+  register: ipaddress
+
 - name: Deploy custom web page into nginx web server
-  copy: src=index.html dest=/var/html/index.html
+  template: src=index.html dest=/var/html/index.html

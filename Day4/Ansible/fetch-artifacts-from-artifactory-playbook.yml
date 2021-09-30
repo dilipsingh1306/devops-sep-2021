@@ -1,0 +1,14 @@
+- name: This playbook demonstrates downloading artifacts from JFrog Artifactory
+  hosts: localhost
+  vars_files:
+     - files-to-be-downloaded.yml
+  tasks:
+    - name: Download artifacts from JFrog Artifactory
+      get_url:
+         url: "{{item}}" 
+         url_username: admin
+         url_password: password 
+         dest: .
+      with_list: "{{files_to_download}}"
+
+

@@ -1,10 +1,16 @@
 <html>
 	<head>
-		<title>Welcome to Ansible Training</title>
+		<title>{{greeting_msg}}</title>
 	</head>
 
 	<body>
-		<h1>Provisioned by Docker</h1>
-		<h1>Configured by Ansible</h1>
+		<h1>Provisioned by {{provisioner_tool}}</h1>
+		<h1>Configured by {{config_mgr_tool}}</h1>
+		<h1>Hostname - {{ansible_hostname}}</h1>
+		<h1>IP Address - {{ipaddress.stdout}}</h1>
+		<h1>Linux - {{ansible_distribution}} v{{ansible_distribution_version}}</h1>
+		<h1>{{ansible_processor_count}} Processors with {{ansible_processor_cores}} cores.</h1>
+		<h1>Memory - {{ansible_memtotal_mb}}</h1>
+		<h1>Hard Drive - {{ansible_devices.sda.size}}</h1>
 	</body>
 </html>

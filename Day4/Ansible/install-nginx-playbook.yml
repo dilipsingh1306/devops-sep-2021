@@ -1,5 +1,9 @@
 - name: This playbook will install,configure and deploys custom web page into ansible nodes
   hosts: all 
+  vars:
+    - greeting_msg: Welcome to DevOps Training!
+    - provisioner_tool: Docker
+    - config_mgr_tool: ansible
   tasks:
     - include: "install-nginx-{{ansible_distribution|lower}}.yml"
     - include: "configure-nginx-{{ansible_distribution|lower}}.yml"
