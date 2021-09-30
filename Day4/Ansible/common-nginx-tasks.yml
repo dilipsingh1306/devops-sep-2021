@@ -1,0 +1,16 @@
+- name: Check if you are able to access nginx web page using curl
+  shell: curl localhost
+  register: output
+
+- name: Start nginx web server when curl fails
+  when: output.rc != 0
+  shell: nginx
+
+- name: Create the custom document root folder
+  file: path=/var/html state=directory mode=0777
+
+- name: Reload the nginx configuration to apply changes
+  shell: nginx -s reload
+
+- name: Deploy custom web page into nginx web server
+  copy: src=index.html dest=/var/html/index.html

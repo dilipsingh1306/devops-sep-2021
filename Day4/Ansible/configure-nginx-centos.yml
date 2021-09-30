@@ -1,0 +1,2 @@
+- name: Configure document root folder to force nginx use our custom folder in CentOS nodes
+  copy: src=nginx.conf dest=/etc/nginx/nginx.conf

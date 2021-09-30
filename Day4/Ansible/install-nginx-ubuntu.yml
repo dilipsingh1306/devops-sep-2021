@@ -1,0 +1,5 @@
+- name: Install nginx web server in Ubuntu nodes
+  apt: name=nginx state=latest update_cache=yes
+
+- name: Install curl in Ubuntu nodes
+  apt: name=curl state=latest 
