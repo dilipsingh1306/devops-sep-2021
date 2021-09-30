@@ -212,5 +212,17 @@ In case you need terminal, you may create a new tab. Bottomline, don't stop jenk
 ```
 http://localhost:8080
 ```
+
+
 The expected output is
 ![Jenkins](1.jpg)
+
+##### Launch a new tab in web browser and navigate to /home/rps/.jenkins/secrets/initialAdminPassword
+You will get a hash key something similar to 
+```
+862e20adaef04899b2099f99c7fede4c
+```
+You need to copy your initial admin password and paste it and clicke on Continue button.
+
+##### You will then get the below screen
+![Second Screen](2.jpg)
