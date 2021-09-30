@@ -793,3 +793,35 @@ Uploaded to artifactory: http://172.17.0.2:8082/artifactory/tektutor/org/tektuto
 [INFO] ------------------------------------------------------------------------
 [jegan@tektutor Hello]$ 
 </pre>
+
+# DevOps
+### Daily stand-up meeting
+- is an inspect and adapt meeting
+- fail-fast meeting
+
+### Continuous Integration(CI)
+- is fail-fast process
+- the source is integrated with dev branch several times a day
+
+### Continuous Deployment (CD)
+- after the successful builds, the artifacts(bin) of the project will be deployed into JFrog Artifactory, etc.,
+- deploying artifacts to QA environment for further automated testing
+
+### Continuous Delivery (CD)
+- is a highly matured level, wherin the binaries will automatically go live or will be deployed automatically
+  to pre-prod or staging environment for further testing before it goes live
+  
+### What is DevOps?
+- particular style of working
+- end to end everything should be automated by converting every service into source code.
+- team should be able to frequently make release to customer in a incremental fashion with confidence
+- team should use tools and process to ensure the releases shared to the customer is of high-quality
+- this requires everyone i.e Developers, QA and Operations Team converts their services into Code and they check-in
+  their source code to version control.
+- Which then will be picked up by Jenkins(CI) Server or similar CI Servers to trigger automated builds.
+- As part of automated builds, dev, qa and pre-prod or staging environments will be provisioned automatically, your
+  application will be built, binaries will be deployed to JFrog Artifactory or Sonatype Nexus and Dev environment for
+  running automated Dev Testing(Unit & Integration Test)
+- Once the automated test cases added by Dev Team works fine, then there should be a way to provision
+  QA environment and developer certified binaries will be promoted for QA automated testing.
+- Once the automated test cases added by QA Team works fine, then there should be a way to provision pre-prod environment automatically and promote the QA certified binaries to the pre-prod environment for further Production like test.
