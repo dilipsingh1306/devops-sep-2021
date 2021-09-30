@@ -215,7 +215,7 @@ http://localhost:8080
 
 
 The expected output is
-![Jenkins](1.jpg)
+![InstallPlugins](1.jpg)
 
 ##### Launch a new tab in web browser and navigate to /home/rps/.jenkins/secrets/initialAdminPassword
 You will get a hash key something similar to 
@@ -228,5 +228,7 @@ You need to copy your initial admin password and paste it and clicke on Continue
 You need to click on Install Suggested Plugins here.
 ![Second Screen](2.jpg)
 
+##### Create an user to login into Jenkins
+![CreateUser](3.jpg)
 
 
