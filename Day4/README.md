@@ -228,7 +228,12 @@ You need to copy your initial admin password and paste it and clicke on Continue
 You need to click on Install Suggested Plugins here.
 ![Second Screen](2.jpg)
 
-##### Create an user to login into Jenkins
-![CreateUser](3.jpg)
+##### Install Suggested Plugins 
+![InstallSuggestedPlugins](3.jpg)
+At times, certain plugin installation may fail.  In case it happens, you may retry and fix the installation issues.
+
+##### Creating a user to login into Jenkins CI Server
+![CreateUser](4.jpg)
+
 
 
