@@ -110,3 +110,29 @@ centos2                    : ok=10   changed=2    unreachable=0    failed=0    s
 ubuntu1                    : ok=10   changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
 ubuntu2                    : ok=10   changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0
 </pre>
+
+### Running the playbook that downloads jars from JFrog Artifactory
+```
+cd ~/Training/devops-sep-2021
+git pull
+cd Day4/Ansible
+ansible-playbook fetch-artifacts-from-artifactory-playbook.yml
+```
+The expected output is
+<pre>
+[jegan@tektutor Ansible]$ ansible-playbook fetch-artifacts-from-artifactory-playbook.yml 
+
+PLAY [This playbook demonstrates downloading artifacts from JFrog Artifactory] ******************************************
+
+TASK [Gathering Facts] **************************************************************************************************
+ok: [localhost]
+
+TASK [Download artifacts from JFrog Artifactory] ************************************************************************
+ok: [localhost] => (item=http://172.17.0.6:8082/ui/native/tektutor/org/tektutor/frontend/1.0.0/frontend-1.0.0.jar)
+ok: [localhost] => (item=http://172.17.0.6:8082/ui/native/tektutor/org/tektutor/businesslayer/1.0.0/businesslayer-1.0.0.jar)
+ok: [localhost] => (item=http://172.17.0.6:8082/ui/native/tektutor/org/tektutor/backend/1.0.0/backend-1.0.0.jar)
+ok: [localhost] => (item=http://172.17.0.6:8082/artifactory/tektutor/org/tektutor/main/1.0.0/main-1.0.0.jar)
+
+PLAY RECAP **************************************************************************************************************
+localhost                  : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+</pre>
