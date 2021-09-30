@@ -3,6 +3,11 @@
 ansible-doc -l
 ```
 
+### Finding total number of ansible modules supported
+```
+ansible-doc -l | wc -l
+```
+
 ### Getting more details of any specific ansible module
 ```
 ansible-doc apt
