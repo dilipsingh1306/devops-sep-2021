@@ -141,5 +141,5 @@ localhost                  : ok=2    changed=0    unreachable=0    failed=0    s
 In case the above playbook fails to download, you may have to look into the below 
 1. See if your JFrog artifactory container is running
 2. Are you sure you ran the 'mvn deploy' atleast once in Day1/CRM project?
-3. See if your JFrog artifathe ctory username and password are different from the ones used in the playbook
+3. See if your JFrog artifactory username and password are different from the ones used in the playbook
 4. See if your JFrog artifactory container IP address is different than the one used in the URL
