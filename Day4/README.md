@@ -271,6 +271,9 @@ Click on Manage Jenkins --> Manage Plugins
 
 #### Installing additonal plugins
 ![Dashboard](9.jpg)
+Select the "Restart Jenkins when installation is complete and no jobs are running"
+
+
 
 You need to search and select the below plugins
 1. Maven Integration
