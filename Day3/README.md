@@ -241,70 +241,71 @@ As you noticed, the data is intact(safe). We are able to access the data via ano
 
 ### What is Idempotency
 - generally when automation scripts are executed we expect the machine at a particular desired state after the playbook is executed.
-- 
-  For example:- 
+
+- For example:- 
      We want latest version of weblogic to be installed in all Ansible Nodes(Servers) after executing the Ansible Playbook.
+     
      There are 4 Ansible Node ( ubuntu1, ubuntu2, centos1 and centos2 )
      Current state - Assume that ubuntu1 machine doesn't have weblogic at all
      Current state - Assume that ubuntu2 machine has an older version of weblogic installed
      Current state - Assume that centos1 machine has latest version of weblogic already installed
      Current state - Assume that centos2 machine has no weblogic
      
-     When we execute the Playbook, 
+     When we execute the Playboo 
         Ansible will compare the Current state of the ubuntu1 node and the desired state.
 
      First Time when Playbook is executed
-        Ubuntu1 Node
-        Current State - No Weblogic present 
+     
+        Ubuntu1 Node<br>
+	Current State - No Weblogic present 
         Desired state - Latest version of Weblogic should be installed
         Action - Ansible will install latest version of Weblogic.
         Report - Task Success but made some change(yellow) on the machine.
         
-        Ubuntu2 Node2
+        Ubuntu2 Node2<br>
         Current State - Older version of Weblogic is installed
         Desired State - Latest version of Weblogic should be installed
         Action - Ansible will install latest version of Weblogic
         Report - Task Success but made some change(yellow) on the machine. 
         
-        CentOS1 Node
+        CentOS1 Node<br>
         Current State - Already has latest version of Weblogic
         Desired State - Latest version of Weblogic should be installed
         Action - No action 
         Report - Task Success but no Change was done(Green)
 
-        CentOS2 Node
+        CentOS2 Node<br>
         Current State - No Weblogic present
         Desired State - Latest version of Weblogic should be installed
         Action - Ansible will install latest version of Weblogic.
         Report - Task Success but made some change(yellow) on the machine.
 
-     Second Time when Playbook is executed
-        Ubuntu1 Node
+     Second Time when Playbook is executed<br>
+        Ubuntu1 Node<br>
         Current State - Already has latest version of Weblogic
         Desired state - Latest version of Weblogic should be installed
         Action - No Action
         Report - Task Success with no change(Green)
         
-        Ubuntu2 Node2
+        Ubuntu2 Node2<br>
         Current State - Already has latest version of Weblogic
         Desired State - Latest version of Weblogic should be installed
         Action - No Action
         Report - Task Success with no change(Green)
         
-        CentOS1 Node
+        CentOS1 Node<br>
         Current State - Already has latest version of Weblogic
         Desired State - Latest version of Weblogic should be installed
         Action - No action 
         Report - Task Success but no Change was done(Green)
 
-        CentOS2 Node
+        CentOS2 Node<br>
         Current State - Already has latest version of Weblogic
         Desired State - Latest version of Weblogic should be installed
         Action - No action
         Report - Task Success but no change was done(Green)
 
-- Ansible will act on the machine only when the Current state is different from the Desired state of the machine, otherwise
-  no matter how many you repeat the playbook execution it make any change.
+- Ansible will act on the machine only when the Current state is different from the Desired state of the machine, otherwise no matter how many you repeat the playbook execution it make any change.
 - any configuration management tool support his property
 
 
@@ -327,7 +328,7 @@ The expected output is
 [jegan@tektutor AnsibleNodeCustomDockerImages]$ cd ubuntu-ansible/
 [jegan@tektutor ubuntu-ansible]$ ls
 Dockerfile
-[jegan@tektutor ubuntu-ansible]$ </b>cp ~/.ssh/id_rsa.pub authorized_keys</b>
+[jegan@tektutor ubuntu-ansible]$ <b>cp ~/.ssh/id_rsa.pub authorized_keys</b>
 [jegan@tektutor ubuntu-ansible]$ <b>docker build -t tektutor/ansible-ubuntu-node .</b>
 Sending build context to Docker daemon  4.096kB
 Step 1/12 : FROM ubuntu:16.04
@@ -680,14 +681,15 @@ ansible -i hosts all -m ping
 ```
 Details of above ansible ad-hoc command are given below
 ```
-|-------|---------------------------------------------------------------------------------|
-|option | description                                                                     |
-|ansible| utility that is used to run any ansible ad-hoc command                          |
-|i      |indicates inventory                                                              |
-|hosts  |is the inventory file name                                                       |
-|m      |indicates ansible module                                                         |
-|ping   |is the ansible module ( python script that comes out of the box with Ansible)    |
-|-----------------------------------------------------------------------------------------|
++------------------------------------------------------------------------------------------+
+|Options | description                                                                     |
+|------------------------------------------------------------------------------------------|
+|ansible | utility that is used to run any ansible ad-hoc command                          |
+|i       | indicates inventory                                                             |
+|hosts   | is the inventory file name                                                      |
+|m       | indicates ansible module                                                        |
+|ping    | is the ansible module ( python script that comes out of the box with Ansible)   |
++------------------------------------------------------------------------------------------+
 ```
 
 The expected output is
@@ -823,7 +825,7 @@ ok: [ubuntu1] => {
             "<html>",
             "<head><title>403 Forbidden</title></head>",
             "<body bgcolor=\"white\">",
-            "<center><h1>403 Forbidden</h1></center>",
+            "<center>403 Forbidden</center>",
             "<hr><center>nginx/1.10.3 (Ubuntu)</center>",
             "</body>",
             "</html>"
@@ -855,7 +857,7 @@ ok: [ubuntu2] => {
             "<html>",
             "<head><title>403 Forbidden</title></head>",
             "<body bgcolor=\"white\">",
-            "<center><h1>403 Forbidden</h1></center>",
+            "<center>403 Forbidden</center>",
             "<hr><center>nginx/1.10.3 (Ubuntu)</center>",
             "</body>",
             "</html>"
