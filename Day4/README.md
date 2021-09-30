@@ -235,5 +235,27 @@ At times, certain plugin installation may fail.  In case it happens, you may ret
 ##### Creating a user to login into Jenkins CI Server
 ![CreateUser](4.jpg)
 
+You need to create a user with your personal email id
+<pre>
++-----------------------------------------------------+
+| Field         |    Value                            |
++--------------------------------------------------------+
+| Username         |  jegan                              |
++--------------------------------------------------------+
+| Password         |  Admin@123                          |
++--------------------------------------------------------+
+| Confirm Password |  Admin@123                          |
++--------------------------------------------------------+
+| Fullname         | Jeganathan Swaminathan              |
++--------------------------------------------------------+
+| E-mail address   | jegan@tektutor.org                  |
++--------------------------------------------------------+
+Click on "Save and Continue" button.
+</pre>
+
+#### Jenkins Dashboard web page
+![Dashboard](5.jpg)
+
+
 
 
