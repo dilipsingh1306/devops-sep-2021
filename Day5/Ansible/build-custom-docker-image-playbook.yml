@@ -1,0 +1,33 @@
+- name: This playbook will build a custom docker image
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: Remove existing image
+      shell: docker rmi tektutor/devops-jenkins-slave:latest
+      ignore_errors: yes
+
+    - name: Install Python PIP in Ubuntu ACM
+      when: ansible_distribution == "Ubuntu"
+      apt: name=python3-pip state=lates update_cache=yes
+
+    - name: Install Extra Package for Enterprise Linux (EPEL) in CentOS ACM
+      when: ansible_distribution == "CentOS"
+      yum: name=epel-release state=latest
+
+    - name: Install Python PIP in CentOS ACM
+      when: ansible_distribution == "CentOS"
+      yum: name=python3-pip state=latest
+
+    - name: Install Docker Python SDK  
+      shell: pip3 install docker-py
+
+    - name: Build an ubuntu based docker image with JDK and Maven
+      docker_image:
+          docker_host: tcp://localhost:4243
+          name: tektutor/devops-jenkins-slave:latest
+          build:
+            dockerfile: Dockerfile
+            path: .
+            pull: no
+          state: present
+          source: build

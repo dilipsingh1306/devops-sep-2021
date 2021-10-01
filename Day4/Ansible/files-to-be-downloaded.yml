@@ -1,5 +1,5 @@
 files_to_download:
-  - http://172.17.0.6:8082/ui/native/tektutor/org/tektutor/frontend/1.0.0/frontend-1.0.0.jar
-  - http://172.17.0.6:8082/ui/native/tektutor/org/tektutor/businesslayer/1.0.0/businesslayer-1.0.0.jar
-  - http://172.17.0.6:8082/ui/native/tektutor/org/tektutor/backend/1.0.0/backend-1.0.0.jar
+  - http://172.17.0.6:8082/artifactory/tektutor/org/tektutor/frontend/1.0.0/frontend-1.0.0.jar
+  - http://172.17.0.6:8082/artifactory/tektutor/org/tektutor/businesslayer/1.0.0/businesslayer-1.0.0.jar
+  - http://172.17.0.6:8082/artifactory/tektutor/org/tektutor/backend/1.0.0/backend-1.0.0.jar
   - http://172.17.0.6:8082/artifactory/tektutor/org/tektutor/main/1.0.0/main-1.0.0.jar

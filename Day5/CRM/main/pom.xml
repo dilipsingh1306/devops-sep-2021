@@ -1,0 +1,46 @@
+<project>
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.tektutor</groupId>
+	<artifactId>main</artifactId>
+	<version>1.0.0</version>
+
+	<parent>
+		<groupId>org.tektutor</groupId>
+		<artifactId>crm</artifactId>
+		<version>1.0.0</version>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.tektutor</groupId>
+			<artifactId>frontend</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>3.0.0</version>
+				<executions>
+					<execution>
+						<id>exec-java-app</id>
+						<phase>install</phase>
+						<goals>
+							<goal>java</goal>
+						</goals>
+
+						<configuration>
+							<mainClass>org.tektutor.Main</mainClass>
+							<classPathScope>compile</classPathScope>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

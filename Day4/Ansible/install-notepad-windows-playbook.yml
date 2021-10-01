@@ -1,0 +1,7 @@
+- name: This playbook will install Notepad++ in Windows 2019 Server
+  hosts: win
+  tasks:
+  - name: Install notepadplusplus version 6.6
+    win_chocolatey:
+       name: notepadplusplus
+       state: latest
