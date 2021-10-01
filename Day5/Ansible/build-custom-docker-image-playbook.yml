@@ -1,5 +1,6 @@
 - name: This playbook will build a custom docker image
   hosts: localhost
+  become: yes
   tasks:
     - name: Remove existing image
       shell: docker rmi tektutor/devops-jenkins-slave:latest
