@@ -8,3 +8,5 @@
 
 ### Step 29
 ![Step27](29.jpg)
+
+Make sure you save the Docker plugin configuration.
