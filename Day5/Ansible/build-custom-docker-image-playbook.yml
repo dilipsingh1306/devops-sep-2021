@@ -30,7 +30,7 @@
     - name: Build an ubuntu based docker image with JDK and Maven
       docker_image:
          docker_host: tcp://localhost:4243
-         name: tektutor/devops-jenkins-slave:test
+         name: tektutor/devops-jenkins-slave:latest
          build:
             dockerfile: Dockerfile
             path: .
