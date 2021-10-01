@@ -10,7 +10,7 @@
       shell: sysctl net.ipv4.conf.all.forwarding=1
 
     - name: Update IP Table rules to accept forwarding
-      shell: sudo iptables -P FORWARD ACCEPT
+      shell: iptables -P FORWARD ACCEPT
 
     - name: Install Python PIP in Ubuntu ACM
       when: ansible_distribution == "Ubuntu"
