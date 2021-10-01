@@ -6,5 +6,6 @@ RUN apt install -y git
 RUN apt-get install -y build-essential
 
 COPY settings.xml /usr/share/maven/conf/settings.xml
+mkdir -p /root/.m2
 
 CMD ["/bin/bash"]
