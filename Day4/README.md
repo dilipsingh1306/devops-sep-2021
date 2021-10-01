@@ -120,7 +120,7 @@ ansible-playbook fetch-artifacts-from-artifactory-playbook.yml
 ```
 The expected output is
 <pre>
-[jegan@tektutor Ansible]$ ansible-playbook fetch-artifacts-from-artifactory-playbook.yml 
+[jegan@tektutor Ansible]$ <b>ansible-playbook fetch-artifacts-from-artifactory-playbook.yml</b>
 
 PLAY [This playbook demonstrates downloading artifacts from JFrog Artifactory] ******************************************
 
@@ -136,3 +136,209 @@ ok: [localhost] => (item=http://172.17.0.6:8082/artifactory/tektutor/org/tektuto
 PLAY RECAP **************************************************************************************************************
 localhost                  : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 </pre>
+
+##### Troubleshooting
+In case the above playbook fails to download, you may have to look into the below 
+1. See if your JFrog artifactory container is running
+2. Did you create Local Repository in JFrog Artifactory with name 'tektutor' ?
+3. Are you sure you ran the 'mvn deploy' atleast once in Day1/CRM project?
+4. See if your JFrog artifactory username and password are different from the ones used in the playbook
+5. See if your JFrog artifactory container IP address is different than the one used in the URL
+
+# DevOps
+### Daily stand-up meeting
+- is an inspect and adapt meeting
+- fail-fast meeting
+
+### Continuous Integration(CI)
+- is fail-fast process
+- the source is integrated with dev branch several times a day
+
+### Continuous Deployment (CD)
+- after the successful builds, the artifacts(bin) of the project will be deployed into JFrog Artifactory, etc.,
+- deploying artifacts to QA environment for further automated testing
+
+### Continuous Delivery (CD)
+- is a highly matured level, wherin the binaries will automatically go live or will be deployed automatically
+  to pre-prod or staging environment for further testing before it goes live
+  
+### What is DevOps?
+- particular style of working
+- end to end everything should be automated by converting every service into source code.
+- team should be able to frequently make release to customer in a incremental fashion with confidence
+- team should use tools and process to ensure the releases shared to the customer is of high-quality
+- this requires everyone i.e Developers, QA and Operations Team converts their services into Code and they check-in
+  their source code to version control.
+- Which then will be picked up by Jenkins(CI) Server or similar CI Servers to trigger automated builds.
+- As part of automated builds, dev, qa and pre-prod or staging environments will be provisioned automatically, your
+  application will be built, binaries will be deployed to JFrog Artifactory or Sonatype Nexus and Dev environment for
+  running automated Dev Testing(Unit & Integration Test)
+- Once the automated test cases added by Dev Team works fine, then there should be a way to provision
+  QA environment and developer certified binaries will be promoted for QA automated testing.
+- Once the automated test cases added by QA Team works fine, then there should be a way to provision pre-prod environment automatically and promote the QA certified binaries to the pre-prod environment for further Production like test.
+
+### What is Jenkins?
+- Continuous Integration(CI) Build Server
+- it was developed by Kohsuke Kawaguchi was a former Sun MicroSystem employed
+- it was developed in Java
+- however it can be used by a programming language stack
+- it is a opensource CI Server
+- Sun Microsystems was then acquired by Oracle led by Larry Ellison
+- Originally it was called Hudson, the team got split into two, one half of the team stayed back in Oracle 
+  and they continue to develop the tool as Hudson, while Kohsuke Kawaguchi and other like minded folks came out of
+  Oracle and they continue to develop the tool as Jenkins.  
+- Jenkins is a new branch created out of Hudson.
+- Some alternates to Jenkins
+  - Commercial version of Jenkins is called Cloudbees
+  - Team City
+  - Bamboo
+  - Microsoft Team Foundataion Server (TFS)
+
+### Downloading Jenkins
+```
+cd ~
+wget https://get.jenkins.io/war-stable/2.303.1/jenkins.war
+```
+
+### Starting Jenkins from CLI
+This will launch Jenkins in an interactive style, hence by mistake typing Ctrl + c will terminate Jenkins.
+```
+cd ~/Downloads
+java -jar ./jenkins.war
+```
+In case you need terminal, you may create a new tab. Bottomline, don't stop jenkins by mistake :)
+
+### Accessing Jenkins from Lab machine Web browser
+```
+http://localhost:8080
+```
+
+
+The expected output is
+![InstallPlugins](1.jpg)
+
+##### Launch a new tab in web browser and navigate to /home/rps/.jenkins/secrets/initialAdminPassword
+You will get a hash key something similar to 
+```
+862e20adaef04899b2099f99c7fede4c
+```
+You need to copy your initial admin password and paste it and clicke on Continue button.
+
+##### You will then get the below screen
+You need to click on Install Suggested Plugins here.
+![Second Screen](2.jpg)
+
+##### Install Suggested Plugins 
+![InstallSuggestedPlugins](3.jpg)
+At times, certain plugin installation may fail.  In case it happens, you may retry and fix the installation issues.
+
+##### Creating a user to login into Jenkins CI Server
+![CreateUser](4.jpg)
+
+You need to create a user with your personal email id
+<pre>
++--------------------------------------------------------+
+| Field            |    Value                            |
++--------------------------------------------------------+
+| Username         |  jegan                              |
++--------------------------------------------------------+
+| Password         |  Admin@123                          |
++--------------------------------------------------------+
+| Confirm Password |  Admin@123                          |
++--------------------------------------------------------+
+| Fullname         | Jeganathan Swaminathan              |
++--------------------------------------------------------+
+| E-mail address   | jegan@tektutor.org                  |
++--------------------------------------------------------+
+Click on "Save and Continue" button.
+</pre>
+
+#### Getting Started
+![GettingStarted](5.jpg)
+Click on "Save and Finish" button without making any change in URL.
+
+#### Getting Started Dashboard
+![Dashboard](6.jpg)
+Click on "Start using Jenkins" button.
+
+#### Dashboard
+![Dashboard](7.jpg)
+If everything went well, you will see this page. You can proceed with further configurations.
+
+#### Configuring JDK and Maven
+Click on Manage Jenkins --> Manage Plugins
+![Dashboard](8.jpg)
+
+#### Installing additonal plugins
+![Dashboard](9.jpg)
+Select the "Restart Jenkins when installation is complete and no jobs are running"
+
+
+
+You need to search and select the below plugins
+1. Maven Integration
+2. Docker
+3. Ansible
+4. Build Pipeline
+
+Select "Install without Restart" button at the bottom.
+
+#### Installing plugin progress
+![image](10.jpg)
+
+#### Step 11
+![image](11.jpg)
+
+#### Step 12
+![image](12.jpg)
+
+#### Step 13
+![image](13.jpg)
+
+#### Step 14
+![image](14.jpg)
+
+#### Step 15
+![image](15.jpg)
+
+#### Step 16
+![image](16.jpg)
+
+#### Step 17
+![image](17.jpg)
+
+#### Step 18
+![image](18.jpg)
+
+#### Step 19
+![image](19.jpg)
+
+#### Step 20
+![image](20.jpg)
+
+#### Step 21
+![image](21.jpg)
+
+#### Step 22
+![image](22.jpg)
+
+#### Step 23
+![image](23.jpg)
+
+#### Step 24
+![image](24.jpg)
+
+#### Step 25
+![image](25.jpg)
+
+#### Step 26
+![image](26.jpg)
+
+
+
+
+
+
+
+
+
