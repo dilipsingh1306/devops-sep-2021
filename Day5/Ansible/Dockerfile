@@ -5,4 +5,6 @@ RUN apt update && apt install -y openjdk-11-jdk maven
 RUN apt install -y git
 RUN apt-get install -y build-essential
 
+COPY settings.xml /usr/share/maven/conf/settings.xml
+
 CMD ["/bin/bash"]
