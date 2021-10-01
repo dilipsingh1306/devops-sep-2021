@@ -286,6 +286,55 @@ Select "Install without Restart" button at the bottom.
 #### Installing plugin progress
 ![image](10.jpg)
 
+#### Step 11
+![image](11.jpg)
+
+#### Step 12
+![image](12.jpg)
+
+#### Step 13
+![image](13.jpg)
+
+#### Step 14
+![image](14.jpg)
+
+#### Step 15
+![image](15.jpg)
+
+#### Step 16
+![image](16.jpg)
+
+#### Step 17
+![image](17.jpg)
+
+#### Step 18
+![image](18.jpg)
+
+#### Step 19
+![image](19.jpg)
+
+#### Step 20
+![image](20.jpg)
+
+#### Step 21
+![image](21.jpg)
+
+#### Step 22
+![image](22.jpg)
+
+#### Step 23
+![image](23.jpg)
+
+#### Step 24
+![image](24.jpg)
+
+#### Step 25
+![image](25.jpg)
+
+#### Step 26
+![image](26.jpg)
+
+
 
 
 
