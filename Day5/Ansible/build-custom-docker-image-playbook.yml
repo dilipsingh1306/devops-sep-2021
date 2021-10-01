@@ -28,12 +28,4 @@
       shell: pip3 install docker-py
 
     - name: Build an ubuntu based docker image with JDK and Maven
-      docker_image:
-          docker_host: tcp://localhost:4243
-          name: tektutor/devops-jenkins-slave:latest
-          build:
-            dockerfile: Dockerfile
-            path: .
-            pull: no
-          state: present
-          source: build
+      shell: docker build -t tektutor/devops-jenkins-slave:latest .
